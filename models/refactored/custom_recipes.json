@@ -1,0 +1,102 @@
+{
+  "Chicken dinner": {
+    "title": "easy chicken",
+    "ingredients": [
+      "chicken",
+      "garlic",
+      "onion",
+      "tomato"
+    ],
+    "steps": [
+      "combine all ingredients in a large bowl.",
+      "dip chicken pieces into melted butter mixture.",
+      "place chicken in buttered baking dish.",
+      "bake at 350 degrees for 15 minutes or until done."
+    ],
+    "ingredient_coverage": 0.25,
+    "mentioned_ingredients": [
+      "chicken"
+    ],
+    "generated_tokens": 46,
+    "finished": true
+  },
+  "Vegetable pasta": {
+    "title": "tomato sauce",
+    "ingredients": [
+      "pasta",
+      "tomato",
+      "garlic",
+      "basil"
+    ],
+    "steps": [
+      "melt butter in a large heavy saucepan.",
+      "add garlic and saute for 3 minutes or until cooked.",
+      "add garlic, tomato sauce, basil, basil, oregano and pepper.",
+      "cover and cook over low heat until liquid thickens.",
+      "reduce heat, cook for 10 minutes or until pasta is tender, stirring occasionally.",
+      "meanwhile, combine remaining ingredients and sprinkle with parmesan cheese.",
+      "sprinkle with mozzarella and top of parmesan.",
+      "serve immediately."
+    ],
+    "ingredient_coverage": 1.0,
+    "mentioned_ingredients": [
+      "pasta",
+      "tomato",
+      "garlic",
+      "basil"
+    ],
+    "generated_tokens": 101,
+    "finished": true
+  },
+  "Cheese omelet": {
+    "title": "creamy spinach stuffed spinach",
+    "ingredients": [
+      "eggs",
+      "cheese",
+      "onion",
+      "spinach"
+    ],
+    "steps": [
+      "cook spinach, and drain.",
+      "in a large bowl, combine the eggs and mayo in a small bowl; whisk until smooth.",
+      "heat oil in a medium bowl, beat the egg whites, sour cream cheese and pepper to coat.",
+      "add the tomatoes, spinach mixture, the eggs, tomato, one at a time, fold in the spinach mixture until the mixture comes out the mixture from the bowl and mix the tomatoes.",
+      "add the spinach mixture.",
+      "stir the tomato, egg whites into the tuna mixture.",
+      "bake at 350\u00b0f for 20 minutes or until hot and bubbly and the top with the cheese."
+    ],
+    "ingredient_coverage": 0.75,
+    "mentioned_ingredients": [
+      "eggs",
+      "cheese",
+      "spinach"
+    ],
+    "generated_tokens": 138,
+    "finished": true
+  },
+  "Roasted vegetables": {
+    "title": "potatoes with mustard and lemon mashed potato",
+    "ingredients": [
+      "potatoes",
+      "carrots",
+      "olive oil",
+      "rosemary"
+    ],
+    "steps": [
+      "boil the potatoes in salted water until they are tender.",
+      "drain and discard.",
+      "peel the potatoes, discarding the potatoes and chop.",
+      "cut into bite size pieces and add salt.",
+      "cover and refrigerate overnight.",
+      "rinse the potatoes in cold water and cook for 10 minutes.",
+      "drain well before serving, add the remaining ingredients and toss to coat.",
+      "bake at 400\u00b0f degrees for 30-35 minutes."
+    ],
+    "ingredient_coverage": 0.25,
+    "mentioned_ingredients": [
+      "potatoes"
+    ],
+    "generated_tokens": 102,
+    "finished": true
+  }
+}

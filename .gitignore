@@ -1,1 +1,7 @@
 venv/
+.runtime/
+__pycache__/
+.ipynb_checkpoints/
+models/**/*.pt
+models/*.pt
+*.log
