@@ -9,7 +9,7 @@ import streamlit as st
 from streamlit.testing.v1 import AppTest
 
 
-APP = Path(__file__).resolve().parents[1] / 'app.py'
+APP = Path(__file__).resolve().parents[1] / 'streamlit_app.py'
 
 
 class RecipeAppTests(unittest.TestCase):

@@ -67,16 +67,17 @@ python minichefgpt.py --gpu-profile --minutes 0 --steps 30000
 
 ## Streamlit interface
 
-The small interface in `app.py` loads `models/refactored/minichefgpt_best.pt`, accepts ingredients separated by commas or new lines, displays the generated title and steps, and downloads the recipe as text. Example buttons fill in chicken or pasta ingredients. The app caches the CPU model and serializes inference across sessions. It does not train or load the recipe dataset.
+The deployment entry point is `streamlit_app.py`; it starts the interface defined in `app.py`. The interface loads `models/refactored/minichefgpt_best.pt`, accepts ingredients separated by commas or new lines, displays the generated title and steps, and downloads the recipe as text. Example buttons fill in chicken or pasta ingredients. The app caches the CPU model and serializes inference across sessions. It does not train or load the recipe dataset.
 
 Run locally after installing `requirements.txt`:
 
 ```powershell
-python -m streamlit run app.py
+python -m streamlit run streamlit_app.py
 ```
 
-For [Streamlit Community Cloud](https://docs.streamlit.io/deploy/streamlit-community-cloud/deploy-your-app), push these files to your GitHub repository and select `app.py` as the entry point:
+For [Streamlit Community Cloud](https://docs.streamlit.io/deploy/streamlit-community-cloud/deploy-your-app), push these files to your GitHub repository and select `streamlit_app.py` as the entry point:
 
+- `streamlit_app.py`
 - `app.py`
 - `minichefgpt.py`
 - `requirements.txt`
