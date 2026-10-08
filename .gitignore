@@ -5,3 +5,7 @@ __pycache__/
 models/**/*.pt
 models/*.pt
 *.log
+
+# Required by the deployed Streamlit app.
+!models/refactored/minichefgpt_best.pt
+.streamlit/secrets.toml

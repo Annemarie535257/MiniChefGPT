@@ -65,6 +65,26 @@ python minichefgpt.py --gpu-profile --minutes 0 --steps 30000
 
 `--minutes 0` disables the time limit. The GPU profile saves separately under `models/gpu/`. `--output-dir` chooses another directory. Larger models and longer runs are options to evaluate; they do not guarantee better recipes.
 
+## Streamlit interface
+
+The small interface in `app.py` loads `models/refactored/minichefgpt_best.pt`, accepts ingredients separated by commas or new lines, displays the generated title and steps, and downloads the recipe as text. Example buttons fill in chicken or pasta ingredients. The app caches the CPU model and serializes inference across sessions. It does not train or load the recipe dataset.
+
+Run locally after installing `requirements.txt`:
+
+```powershell
+python -m streamlit run app.py
+```
+
+For [Streamlit Community Cloud](https://docs.streamlit.io/deploy/streamlit-community-cloud/deploy-your-app), push these files to your GitHub repository and select `app.py` as the entry point:
+
+- `app.py`
+- `minichefgpt.py`
+- `requirements.txt`
+- `.streamlit/config.toml`
+- `models/refactored/minichefgpt_best.pt`
+
+Use Python 3.11 to match the tested environment. The best checkpoint is about 4.2 MiB and is allowed through `.gitignore`; include it in the repository before deployment. The latest training checkpoint, raw dataset, notebook, local environments, and result JSON files are not needed for inference deployment. No API key is required. This prepares the app for deployment; it does not publish the app.
+
 ## Use your ingredients
 
 Load the saved model without retraining:
@@ -126,7 +146,7 @@ The CPU run trained for approximately 30.0 minutes and completed 5,933 steps. Th
 
 The model learned recipe phrasing and recipe boundaries, but these drafts still omit ingredients, add unrelated ones, repeat phrases, and sometimes describe invalid actions. Ingredient overlap does not establish culinary correctness. **High-performing recipe generation has not been achieved by this run.** The notebook includes the actual outputs. Candidate sampling improves the four custom examples; the separate one-candidate benchmark exposes the weaker underlying ingredient adherence.
 
-All 11 correctness checks pass. The checkpoint was reloaded from disk before evaluating all 494 test recipes (64,382 response tokens).
+All 11 model checks and 6 Streamlit interface checks pass. The checkpoint was reloaded from disk before evaluating all 494 test recipes (64,382 response tokens).
 
 ## Quality limits
 
@@ -141,3 +161,5 @@ python -m unittest discover -s tests -v
 ```
 
 Checks cover future-token isolation, prompt/padding loss masking, complete response coverage across windows, split isolation, full held-out token accounting, unseen Unicode tokenization, negative-logit repetition penalties, and checkpoint/tokenizer round trips.
+
+The Streamlit checks cover ingredient validation, example selection, recipe display, downloads, session persistence, missing checkpoints, and generation errors. A separate smoke check also generated a recipe through the interface using the real saved checkpoint.

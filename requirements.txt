@@ -6,3 +6,4 @@ tokenizers>=0.20
 nbformat>=5.10
 nbclient>=0.10
 ipykernel>=6.29
+streamlit==1.65.0
