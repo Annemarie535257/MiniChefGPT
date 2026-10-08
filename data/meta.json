@@ -1,0 +1,13 @@
+{
+  "vocab_size": 8000,
+  "special_tokens": {
+    "<|pad|>": 0,
+    "<|unk|>": 1,
+    "<|bos|>": 2,
+    "<|eos|>": 3
+  },
+  "train_tokens": 1242152,
+  "val_tokens": 139057,
+  "train_recipes": 7200,
+  "val_recipes": 800
+}
