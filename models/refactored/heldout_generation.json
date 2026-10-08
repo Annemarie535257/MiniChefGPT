@@ -1,0 +1,328 @@
+[
+  {
+    "recipe_id": 2303,
+    "reference_title": "potatoes in foil",
+    "title": "bacon stuffed potatoes",
+    "ingredients": [
+      "potatoes",
+      "onion",
+      "bacon",
+      "butter",
+      "cayenne"
+    ],
+    "steps": [
+      "put potatoes in a shallow dish.",
+      "cover and bake at 400 degrees for 45 minutes, or until tender.",
+      "remove and let cool for 10 minutes."
+    ],
+    "ingredient_coverage": 0.2,
+    "mentioned_ingredients": [
+      "potatoes"
+    ],
+    "generated_tokens": 40,
+    "finished": true
+  },
+  {
+    "recipe_id": 5418,
+    "reference_title": "cucusebzaminee ( iranian potatoes)",
+    "title": "potatoes",
+    "ingredients": [
+      "potatoes",
+      "onion",
+      "eggs"
+    ],
+    "steps": [
+      "mash potatoes with potatoes and potato.",
+      "chop potatoes and drain.",
+      "mash, mash potatoes, and mix well.",
+      "mix mashed potatoes in potato mixture.",
+      "add beaten eggs, and sour cream.",
+      "spoon potato skins into a greased or paper lined baking dish.",
+      "bake at 350\u00b0f for 15 minutes."
+    ],
+    "ingredient_coverage": 0.6666666666666666,
+    "mentioned_ingredients": [
+      "potatoes",
+      "eggs"
+    ],
+    "generated_tokens": 74,
+    "finished": true
+  },
+  {
+    "recipe_id": 7454,
+    "reference_title": "frank sinatra's sausage and green peppers",
+    "title": "easy sausage stuffed sausage",
+    "ingredients": [
+      "green bell peppers",
+      "olive oil",
+      "hot italian sausage",
+      "red wine"
+    ],
+    "steps": [
+      "heat oil in a large skillet and add onion, onion and cook until tender.",
+      "drain and set aside.",
+      "fry bacon drippings in olive oil for 1 minute.",
+      "add mushrooms, cook, then stir until onion is tender.",
+      "mix in tomatoes and salt.",
+      "season to taste.",
+      "reduce heat; reduce heat and simmer for 1 hour, or until potatoes are tender, about 1/2 minutes.",
+      "garnish with fresh parsley and serve."
+    ],
+    "ingredient_coverage": 0.25,
+    "mentioned_ingredients": [
+      "olive oil"
+    ],
+    "generated_tokens": 105,
+    "finished": true
+  },
+  {
+    "recipe_id": 9362,
+    "reference_title": "tangy cauliflower",
+    "title": "cauliflower",
+    "ingredients": [
+      "cauliflower",
+      "sour cream",
+      "onion",
+      "prepared mustard",
+      "milk",
+      "cheddar cheese"
+    ],
+    "steps": [
+      "cook cauliflower in boiling salted water until crisp.",
+      "drain.",
+      "put in a large pot of boiling water, add peas, lemon juice and water.",
+      "cook until tender, about 3 minutes.",
+      "stir in remaining ingredients.",
+      "serve over rice or crackers."
+    ],
+    "ingredient_coverage": 0.16666666666666666,
+    "mentioned_ingredients": [
+      "cauliflower"
+    ],
+    "generated_tokens": 62,
+    "finished": true
+  },
+  {
+    "recipe_id": 4408,
+    "reference_title": "double-baked stuffed taters",
+    "title": "garlic chicken",
+    "ingredients": [
+      "russet potatoes",
+      "olive oil",
+      "red onion",
+      "mushrooms",
+      "garlic",
+      "fresh lemon juice",
+      "fresh dill",
+      "dried dill",
+      "salt",
+      "black pepper",
+      "nonfat sour cream",
+      "parmesan cheese"
+    ],
+    "steps": [
+      "preheat oven to 375 degrees.",
+      "cut in half lengthwise into quarters and cut into 1/2 inch slices.",
+      "place in baking dish.",
+      "cover with foil, and bake for 20 minutes or until fish is tender, about 5 minutes.",
+      "serve hot or cold."
+    ],
+    "ingredient_coverage": 0.0,
+    "mentioned_ingredients": [],
+    "generated_tokens": 64,
+    "finished": true
+  },
+  {
+    "recipe_id": 4557,
+    "reference_title": "tortilla espanola (spanish omelet)",
+    "title": "sausage & cabbage",
+    "ingredients": [
+      "potatoes",
+      "onion",
+      "cooked ham",
+      "salt",
+      "dried chile pequins",
+      "eggs",
+      "milk",
+      "salt",
+      "pepper"
+    ],
+    "steps": [
+      "in a medium bowl, combine the potatoes and the flour.",
+      "in a bowl, add salt, pepper and bacon.",
+      "cook until tender (about 3 minutes).",
+      "remove from the pan and keep warm.",
+      "in a large bowl, mix together the cheese, milk, and water.",
+      "add the potatoes to the flour mixture.",
+      "cook for 15 minutes.",
+      "reduce the heat to low.",
+      "sprinkle the potatoes with salt and pepper.",
+      "add to pan and cook until tender, stirring occasionally, about 20 minutes.",
+      "remove the potatoes and sprinkle with salt and pepper, if desired."
+    ],
+    "ingredient_coverage": 0.5555555555555556,
+    "mentioned_ingredients": [
+      "potatoes",
+      "salt",
+      "milk",
+      "salt",
+      "pepper"
+    ],
+    "generated_tokens": 136,
+    "finished": true
+  },
+  {
+    "recipe_id": 3908,
+    "reference_title": "pork loin chops with garlic sauce",
+    "title": "zucchini frittata",
+    "ingredients": [
+      "butter",
+      "flour",
+      "garlic",
+      "heavy cream",
+      "butter"
+    ],
+    "steps": [
+      "saute onion in butter.",
+      "add flour, baking powder and salt and pepper.",
+      "cook until hot.",
+      "stir in flour until mixture has thickened.",
+      "set aside.",
+      "melt butter in a saucepan over medium heat, add egg, cover and simmer for 5 minutes.",
+      "add half of the zucchini, 1/2 cup flour mixture, one at a time.",
+      "add zucchini, stirring constantly until it starts to cook and thick.",
+      "stir in butter, cover with plastic wrap tightly with foil.",
+      "cook for 10 minutes or until the top is tender.",
+      "serve with your choice of parsley and serve."
+    ],
+    "ingredient_coverage": 0.6,
+    "mentioned_ingredients": [
+      "butter",
+      "flour",
+      "butter"
+    ],
+    "generated_tokens": 138,
+    "finished": true
+  },
+  {
+    "recipe_id": 3888,
+    "reference_title": "chewy maple oat clusters",
+    "title": "banana bread",
+    "ingredients": [
+      "old fashioned oats",
+      "peanuts",
+      "sunflower seeds",
+      "raisins",
+      "butter",
+      "pure maple syrup"
+    ],
+    "steps": [
+      "preheat oven to 400 degrees.",
+      "place ingredients in a bowl.",
+      "sprinkle with nuts.",
+      "bake for 30 minutes.",
+      "let stand 5 minutes before cutting."
+    ],
+    "ingredient_coverage": 0.0,
+    "mentioned_ingredients": [],
+    "generated_tokens": 42,
+    "finished": true
+  },
+  {
+    "recipe_id": 3064,
+    "reference_title": "country cornbread",
+    "title": "blueberry muffins",
+    "ingredients": [
+      "flour",
+      "yellow cornmeal",
+      "baking powder",
+      "salt",
+      "baking soda",
+      "eggs",
+      "milk"
+    ],
+    "steps": [
+      "preheat oven to 350\u00b0.",
+      "mix together flour, baking soda, salt and baking powder.",
+      "add milk, egg and milk.",
+      "blend well.",
+      "add remaining ingredients to dry ingredients.",
+      "stir in flour mixture.",
+      "drop rounded tablespoons on greased cookie sheets, flatten with a fork.",
+      "bake 25 minutes."
+    ],
+    "ingredient_coverage": 0.8571428571428571,
+    "mentioned_ingredients": [
+      "flour",
+      "baking powder",
+      "salt",
+      "baking soda",
+      "eggs",
+      "milk"
+    ],
+    "generated_tokens": 76,
+    "finished": true
+  },
+  {
+    "recipe_id": 9795,
+    "reference_title": "deep fried mars bars",
+    "title": "deviled pork chops",
+    "ingredients": [
+      "plain flour",
+      "cornflour",
+      "baking soda",
+      "milk",
+      "beer"
+    ],
+    "steps": [
+      "mix together the ingredients.",
+      "mix well.",
+      "pour the batter into a greased 2-inch loaf pan (or over all of the pork chops).",
+      "bake in a 325 degree oven for 35 minutes or until done.",
+      "turn out clean and let cool on rack."
+    ],
+    "ingredient_coverage": 0.0,
+    "mentioned_ingredients": [],
+    "generated_tokens": 67,
+    "finished": true
+  },
+  {
+    "recipe_id": 6805,
+    "reference_title": "cabbage casserole",
+    "title": "crock pot soup",
+    "ingredients": [
+      "cabbage",
+      "margarine",
+      "velveeta cheese"
+    ],
+    "steps": [
+      "mix all ingredients.",
+      "cook on low for 6 minutes.",
+      "add salt and pepper to taste."
+    ],
+    "ingredient_coverage": 0.0,
+    "mentioned_ingredients": [],
+    "generated_tokens": 29,
+    "finished": true
+  },
+  {
+    "recipe_id": 4363,
+    "reference_title": "english muffin pizzas",
+    "title": "french onion casserole",
+    "ingredients": [
+      "english muffins",
+      "mozzarella cheese",
+      "sausage"
+    ],
+    "steps": [
+      "preheat oven to 350 degrees.",
+      "mix all ingredients together and pour into a 13x9 inch baking dish.",
+      "bake for 40 minutes or until bubbly.",
+      "serve with hot crackers, a knife."
+    ],
+    "ingredient_coverage": 0.0,
+    "mentioned_ingredients": [],
+    "generated_tokens": 50,
+    "finished": true
+  }
+]
