@@ -4,6 +4,10 @@ MiniChefGPT learns to turn ingredient names into a short recipe title and instru
 
 **Current status:** the refactor, training, and saved-model tests are complete. Recipe quality remains experimental: this CPU run is not yet a reliably high-performing recipe generator.
 
+## Try the deployed model
+
+Test the deployed MiniChefGPT model in Streamlit: [Open the MiniChefGPT app](https://minichefgpt.streamlit.app/)
+
 Open **`MiniChefGPT_combined.ipynb`** and run its cells in order from the project root. It contains the actual training logs, held-out results, loss plot, and custom ingredient outputs from the latest run.
 
 ## Five Transformer mechanisms
