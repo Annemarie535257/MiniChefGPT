@@ -1,0 +1,83 @@
+[
+  {
+    "step": 36,
+    "epoch": 0,
+    "train_loss": 2.4514140013858223,
+    "validation_loss": 2.1405225840196365,
+    "validation_perplexity": 8.503880459942023,
+    "learning_rate": 4.89178455901279e-05,
+    "elapsed_seconds": 413.53100000000086
+  },
+  {
+    "step": 77,
+    "epoch": 0,
+    "train_loss": 2.2659598528772174,
+    "validation_loss": 2.0698715388416176,
+    "validation_perplexity": 7.923805151277775,
+    "learning_rate": 4.5074259339615845e-05,
+    "elapsed_seconds": 823.5310000000009
+  },
+  {
+    "step": 117,
+    "epoch": 0,
+    "train_loss": 2.1980276778354932,
+    "validation_loss": 2.037865075754283,
+    "validation_perplexity": 7.674207844889769,
+    "learning_rate": 3.909152065233732e-05,
+    "elapsed_seconds": 1235.6560000000009
+  },
+  {
+    "step": 147,
+    "epoch": 0,
+    "train_loss": 2.181543543755184,
+    "validation_loss": 2.0195076523268956,
+    "validation_perplexity": 7.534614370440268,
+    "learning_rate": 3.195512364271351e-05,
+    "elapsed_seconds": 1668.2970000000005
+  },
+  {
+    "step": 176,
+    "epoch": 0,
+    "train_loss": 2.1764496015356434,
+    "validation_loss": 2.008413086769136,
+    "validation_perplexity": 7.451483102717772,
+    "learning_rate": 2.3107771713050726e-05,
+    "elapsed_seconds": 2093.875
+  },
+  {
+    "step": 209,
+    "epoch": 0,
+    "train_loss": 2.1811930105453476,
+    "validation_loss": 1.9950972420952438,
+    "validation_perplexity": 7.35291800628032,
+    "learning_rate": 1.545918624326485e-05,
+    "elapsed_seconds": 2501.25
+  },
+  {
+    "step": 246,
+    "epoch": 0,
+    "train_loss": 2.1793380971401497,
+    "validation_loss": 1.9851774525612615,
+    "validation_perplexity": 7.280339185668744,
+    "learning_rate": 9.512260178191969e-06,
+    "elapsed_seconds": 2916.9530000000013
+  },
+  {
+    "step": 274,
+    "epoch": 0,
+    "train_loss": 2.1060648036019374,
+    "validation_loss": 1.9828123489194498,
+    "validation_perplexity": 7.263140774975892,
+    "learning_rate": 5.916045486064711e-06,
+    "elapsed_seconds": 3350.5150000000012
+  },
+  {
+    "step": 292,
+    "epoch": 0,
+    "train_loss": 2.146451659468436,
+    "validation_loss": 1.9798436992702007,
+    "validation_perplexity": 7.241611027611882,
+    "learning_rate": 5.0001276501898336e-06,
+    "elapsed_seconds": 3669.3590000000004
+  }
+]

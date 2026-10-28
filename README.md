@@ -71,7 +71,7 @@ python minichefgpt.py --gpu-profile --minutes 0 --steps 30000
 
 ## Streamlit interface
 
-The deployment entry point is `streamlit_app.py`; it starts the interface defined in `app.py`. The interface loads `models/refactored/minichefgpt_best.pt`, accepts ingredients separated by commas or new lines, displays the generated title and steps, and downloads the recipe as text. Example buttons fill in chicken or pasta ingredients. The app caches the CPU model and serializes inference across sessions. It does not train or load the recipe dataset.
+The deployment entry point is `streamlit_app.py`; it starts the interface defined in `app.py`. The interface loads `models/refactored/minichefgpt_best.pt`, accepts ingredients separated by commas or new lines, displays the generated title and steps, and downloads the recipe as text. Example buttons fill in chicken or pasta ingredients. A **Model** choice switches between MiniChefGPT and the fine-tuned GPT-2 model (see below); GPT-2 ranks 4 drafts per request instead of 8 because each draft is slower. The app caches each CPU model and serializes inference across sessions. It does not train or load the recipe dataset.
 
 Run locally after installing `requirements.txt`:
 
@@ -89,6 +89,8 @@ For [Streamlit Community Cloud](https://docs.streamlit.io/deploy/streamlit-commu
 - `models/refactored/minichefgpt_best.pt`
 
 Use Python 3.11 to match the tested environment. The best checkpoint is about 4.2 MiB and is allowed through `.gitignore`; include it in the repository before deployment. The latest training checkpoint, raw dataset, notebook, local environments, and result JSON files are not needed for inference deployment. No API key is required. This prepares the app for deployment; it does not publish the app.
+
+The fine-tuned GPT-2 folder (`models/gpt2/best/`, about 480 MB) is excluded by `.gitignore`, so a deployed app shows the GPT-2 option as unavailable until the model is provided. To enable it, upload that folder to a Hugging Face model repository and set the `MINICHEF_GPT2_MODEL` environment variable (or Streamlit secret exposed as an environment variable) to its model id. GPT-2 needs roughly 1 GB of memory alongside the small model.
 
 ## Use your ingredients
 
@@ -124,6 +126,9 @@ Decoding uses temperature, top-k/top-p sampling, a sign-aware repetition penalty
 - `models/refactored/custom_recipes.json`: actual custom-ingredient neural drafts.
 - `models/refactored/heldout_generation.json`: neural outputs for 12 unseen test ingredient lists, sampled with a fixed seed and one candidate per input.
 - `models/refactored/training_loss.png`: training plot.
+- `MiniChefGPT_GPT2_finetune.ipynb`: GPT-2 fine-tuning notebook, with recorded outputs and the comparison with MiniChefGPT.
+- `gpt2_recipes.py`: loads the fine-tuned GPT-2 model and generates recipes.
+- `models/gpt2/`: fine-tuning history, metrics, and generated recipes; `best/` holds the model weights (not committed).
 
 The notebook defines all five mechanisms directly and uses the raw recipe data. Superseded models, component notebooks, and processed dataset copies have been removed.
 
@@ -151,7 +156,23 @@ The CPU run trained for approximately 30.0 minutes and completed 5,933 steps. Th
 
 The model learned recipe phrasing and recipe boundaries, but these drafts still omit ingredients, add unrelated ones, repeat phrases, and sometimes describe invalid actions. Ingredient overlap does not establish culinary correctness. **High-performing recipe generation has not been achieved by this run.** The notebook includes the actual outputs. Candidate sampling improves the four custom examples; the separate one-candidate benchmark exposes the weaker underlying ingredient adherence.
 
-All 11 model checks and 6 Streamlit interface checks pass. The checkpoint was reloaded from disk before evaluating all 494 test recipes (64,382 response tokens).
+All 11 model checks, 3 GPT-2 parsing checks, and 8 Streamlit interface checks pass. The checkpoint was reloaded from disk before evaluating all 494 test recipes (64,382 response tokens).
+
+## GPT-2 fine-tuning
+
+`MiniChefGPT_GPT2_finetune.ipynb` fine-tunes pretrained GPT-2 (124M parameters) on the same cleaned recipes and the same train/validation/test split. Recipes are written as plain text (`Ingredients: … / Title: … / Steps: 1. …`) ending with GPT-2's `<|endoftext|>` token; only title and step tokens contribute to the loss. Training runs on CPU for a 60-minute budget, with the cosine learning-rate decay tied to elapsed time so the schedule completes. Sequences are capped at 256 tokens (1,271 training recipes are truncated). The best model is saved to `models/gpt2/best/`, and results to `models/gpt2/metrics.json`, `custom_recipes.json`, and `heldout_generation.json`. `gpt2_recipes.py` provides the same loading and generation code for the app.
+
+The recorded run completed 292 steps (2,336 recipes, about a quarter of the training set) in 61 minutes.
+
+| Metric | MiniChefGPT | GPT-2 fine-tuned |
+| --- | ---: | ---: |
+| Parameters | 1,053,440 | 124,439,808 |
+| Unseen ingredient mentions, 12 test inputs, 1 candidate each | 27.5% | 56.1% |
+| Custom ingredient mentions, 4 inputs, 8 candidates each | 56.2% | 100% |
+| End-marker rate on 12 unseen inputs | 100% | 100% |
+| Test loss (GPT-2 tokens): before → after fine-tuning | — | 2.484 → 2.018 |
+
+The two models use different tokenizers, so their perplexities are not comparable; the generation rows use the same inputs, seeds, and `ingredient_coverage` score. GPT-2 follows the requested ingredients much more often and writes more fluent steps, but its drafts still repeat actions, contradict themselves (for example, "remove from heat and simmer"), and sometimes add ingredients. Longer fine-tuning, ideally on a GPU, is the clearest next step.
 
 ## Quality limits
 
@@ -167,4 +188,4 @@ python -m unittest discover -s tests -v
 
 Checks cover future-token isolation, prompt/padding loss masking, complete response coverage across windows, split isolation, full held-out token accounting, unseen Unicode tokenization, negative-logit repetition penalties, and checkpoint/tokenizer round trips.
 
-The Streamlit checks cover ingredient validation, example selection, recipe display, downloads, session persistence, missing checkpoints, and generation errors. A separate smoke check also generated a recipe through the interface using the real saved checkpoint.
+The Streamlit checks cover ingredient validation, example selection, recipe display, downloads, session persistence, missing checkpoints, generation errors, choosing the GPT-2 model, and a missing GPT-2 model. A separate smoke check also generated a recipe through the interface using the real saved checkpoint.

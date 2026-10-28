@@ -1,0 +1,373 @@
+[
+  {
+    "recipe_id": 2303,
+    "reference_title": "potatoes in foil",
+    "title": "bacon and bacon salad",
+    "ingredients": [
+      "potatoes",
+      "onion",
+      "bacon",
+      "butter",
+      "cayenne"
+    ],
+    "steps": [
+      "preheat oven to 400\u00b0f.",
+      "combine potatoes, onion, potatoes, bacon, butter and cayenne.",
+      "mix well.",
+      "place in a 2-quart skillet and cook until potatoes are tender.",
+      "stir in butter and cay.",
+      "toss with remaining bacon.",
+      "bake at 350\u00b0f for about 10 minutes.",
+      "cool completely before serving."
+    ],
+    "ingredient_coverage": 1.0,
+    "mentioned_ingredients": [
+      "potatoes",
+      "onion",
+      "bacon",
+      "butter",
+      "cayenne"
+    ],
+    "generated_tokens": 101,
+    "finished": true
+  },
+  {
+    "recipe_id": 5418,
+    "reference_title": "cucusebzaminee ( iranian potatoes)",
+    "title": "potatoes with egg",
+    "ingredients": [
+      "potatoes",
+      "onion",
+      "eggs"
+    ],
+    "steps": [
+      "in a large pot, combine potatoes, onion and eggs.",
+      "add the remaining ingredients and bring to a boil.",
+      "reduce heat to medium.",
+      "reduce heat to low.",
+      "stir in potatoes and onion.",
+      "cook for 3-4 minutes.",
+      "remove from heat.",
+      "drain and set aside.",
+      "combine the potatoes, egg and salt in a bowl.",
+      "combine the bread crumbs and sugar.",
+      "add the potatoes, egg, salt and pepper.",
+      "mix well.",
+      "cover and cook on low for 2-3 hours.",
+      "remove from heat and cool completely."
+    ],
+    "ingredient_coverage": 1.0,
+    "mentioned_ingredients": [
+      "potatoes",
+      "onion",
+      "eggs"
+    ],
+    "generated_tokens": 155,
+    "finished": true
+  },
+  {
+    "recipe_id": 7454,
+    "reference_title": "frank sinatra's sausage and green peppers",
+    "title": "chinese sausage",
+    "ingredients": [
+      "green bell peppers",
+      "olive oil",
+      "hot italian sausage",
+      "red wine"
+    ],
+    "steps": [
+      "combine all ingredients in large mixing bowl.",
+      "stir in sausage.",
+      "add meat mixture and mix well.",
+      "add sausage mixture and mix well again.",
+      "add hot italian sausage.",
+      "pour over the sausage.",
+      "sprinkle with chopped onions.",
+      "place on greased cookie sheet.",
+      "bake in oven for 25 minutes.",
+      "cool slightly."
+    ],
+    "ingredient_coverage": 0.25,
+    "mentioned_ingredients": [
+      "hot italian sausage"
+    ],
+    "generated_tokens": 99,
+    "finished": true
+  },
+  {
+    "recipe_id": 9362,
+    "reference_title": "tangy cauliflower",
+    "title": "cauliflower bread",
+    "ingredients": [
+      "cauliflower",
+      "sour cream",
+      "onion",
+      "prepared mustard",
+      "milk",
+      "cheddar cheese"
+    ],
+    "steps": [
+      "mix together the sour cream, onion and milk.",
+      "add to the cauliflower.",
+      "toss well.",
+      "place in a greased 2 quart casserole dish.",
+      "cover with foil and bake at 400 for 40 minutes."
+    ],
+    "ingredient_coverage": 0.6666666666666666,
+    "mentioned_ingredients": [
+      "cauliflower",
+      "sour cream",
+      "onion",
+      "milk"
+    ],
+    "generated_tokens": 66,
+    "finished": true
+  },
+  {
+    "recipe_id": 4408,
+    "reference_title": "double-baked stuffed taters",
+    "title": "potato salad with sour cream",
+    "ingredients": [
+      "russet potatoes",
+      "olive oil",
+      "red onion",
+      "mushrooms",
+      "garlic",
+      "fresh lemon juice",
+      "fresh dill",
+      "dried dill",
+      "salt",
+      "black pepper",
+      "nonfat sour cream",
+      "parmesan cheese"
+    ],
+    "steps": [
+      "in a large bowl, combine potatoes, onion, mushrooms and garlic.",
+      "mix well.",
+      "drain and stir in parmesan cheese.",
+      "mix in remaining ingredients.",
+      "stir in dill.",
+      "sprinkle with parmesan cheese and serve."
+    ],
+    "ingredient_coverage": 0.4166666666666667,
+    "mentioned_ingredients": [
+      "mushrooms",
+      "garlic",
+      "fresh dill",
+      "dried dill",
+      "parmesan cheese"
+    ],
+    "generated_tokens": 74,
+    "finished": true
+  },
+  {
+    "recipe_id": 4557,
+    "reference_title": "tortilla espanola (spanish omelet)",
+    "title": "ham and potatoes",
+    "ingredients": [
+      "potatoes",
+      "onion",
+      "cooked ham",
+      "salt",
+      "dried chile pequins",
+      "eggs",
+      "milk",
+      "salt",
+      "pepper"
+    ],
+    "steps": [
+      "combine potatoes, onion, bacon, ham, salt, chile pequin and egg.",
+      "bring to a boil.",
+      "reduce heat and simmer for 20 minutes.",
+      "remove from heat and set aside.",
+      "mix together potatoes, onion, ham, salt and pepper in a bowl.",
+      "stir in eggs, milk, and salt.",
+      "mix well.",
+      "stir in flour, sugar and salt.",
+      "stir in milk and mix well.",
+      "add ham and cook for 30 minutes or until thickened and browned.",
+      "serve with sour cream or other sour cream."
+    ],
+    "ingredient_coverage": 0.8888888888888888,
+    "mentioned_ingredients": [
+      "potatoes",
+      "onion",
+      "salt",
+      "dried chile pequins",
+      "eggs",
+      "milk",
+      "salt",
+      "pepper"
+    ],
+    "generated_tokens": 147,
+    "finished": true
+  },
+  {
+    "recipe_id": 3908,
+    "reference_title": "pork loin chops with garlic sauce",
+    "title": "blackberry bread",
+    "ingredients": [
+      "butter",
+      "flour",
+      "garlic",
+      "heavy cream",
+      "butter"
+    ],
+    "steps": [
+      "preheat oven to 400 degrees f.",
+      "preheat oven racks to 400 degrees f and grease and flour a 12 x 9\\",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      ".",
+      "."
+    ],
+    "ingredient_coverage": 0.2,
+    "mentioned_ingredients": [
+      "flour"
+    ],
+    "generated_tokens": 74,
+    "finished": true
+  },
+  {
+    "recipe_id": 3888,
+    "reference_title": "chewy maple oat clusters",
+    "title": "sweet maple syrup cookies",
+    "ingredients": [
+      "old fashioned oats",
+      "peanuts",
+      "sunflower seeds",
+      "raisins",
+      "butter",
+      "pure maple syrup"
+    ],
+    "steps": [
+      "place dry ingredients in a small bowl and mix well.",
+      "pour into cookie sheet.",
+      "bake at 350 for 30 minutes."
+    ],
+    "ingredient_coverage": 0.0,
+    "mentioned_ingredients": [],
+    "generated_tokens": 42,
+    "finished": true
+  },
+  {
+    "recipe_id": 3064,
+    "reference_title": "country cornbread",
+    "title": "crock pot cookie dough",
+    "ingredients": [
+      "flour",
+      "yellow cornmeal",
+      "baking powder",
+      "salt",
+      "baking soda",
+      "eggs",
+      "milk"
+    ],
+    "steps": [
+      "mix flour, cornmeal and baking powder together.",
+      "beat in eggs, milk and salt.",
+      "stir in milk and mix well.",
+      "sprinkle with flour mixture.",
+      "bake at 350 degrees for 20-25 minutes or until golden brown.",
+      "cool completely.",
+      "sprinkle with remaining flour mixture.",
+      "bake at 350 for 15-20 minutes or until golden."
+    ],
+    "ingredient_coverage": 0.7142857142857143,
+    "mentioned_ingredients": [
+      "flour",
+      "baking powder",
+      "salt",
+      "eggs",
+      "milk"
+    ],
+    "generated_tokens": 100,
+    "finished": true
+  },
+  {
+    "recipe_id": 9795,
+    "reference_title": "deep fried mars bars",
+    "title": "chocolate brownie",
+    "ingredients": [
+      "plain flour",
+      "cornflour",
+      "baking soda",
+      "milk",
+      "beer"
+    ],
+    "steps": [
+      "preheat oven to 375 degrees.",
+      "in a large bowl, combine flour, cornflours, baking soda, and milk.",
+      "add to the wet ingredients and mix well.",
+      "pour into greased 9x13 baking dish.",
+      "bake at 350 degrees for 30-35 minutes or until golden brown."
+    ],
+    "ingredient_coverage": 0.6,
+    "mentioned_ingredients": [
+      "cornflour",
+      "baking soda",
+      "milk"
+    ],
+    "generated_tokens": 82,
+    "finished": true
+  },
+  {
+    "recipe_id": 6805,
+    "reference_title": "cabbage casserole",
+    "title": "cheesy cabbage",
+    "ingredients": [
+      "cabbage",
+      "margarine",
+      "velveeta cheese"
+    ],
+    "steps": [
+      "preheat oven to 350\u00b0f.",
+      "place cabbage in a shallow bowl.",
+      "mix margarine, velveleta, cheese and cabbage in a bowl.",
+      "cover and let stand 20 minutes.",
+      "chill, uncovered, until cheese is melted.",
+      "place cabbage in refrigerator.",
+      "cut cabbage into bite size pieces.",
+      "roll out of the cabbage, and place in a greased 13x9 inch baking pan.",
+      "bake at 350\u00b0f for 30 minutes, until golden brown."
+    ],
+    "ingredient_coverage": 0.6666666666666666,
+    "mentioned_ingredients": [
+      "cabbage",
+      "margarine"
+    ],
+    "generated_tokens": 125,
+    "finished": true
+  },
+  {
+    "recipe_id": 4363,
+    "reference_title": "english muffin pizzas",
+    "title": "english muffins",
+    "ingredients": [
+      "english muffins",
+      "mozzarella cheese",
+      "sausage"
+    ],
+    "steps": [
+      "preheat oven to 350\u00b0f.",
+      "spray muffin cups with nonstick cooking spray.",
+      "in a large bowl, mix flour, baking soda and salt.",
+      "combine egg yolks, milk, and sausage in large bowl.",
+      "stir in flour mixture.",
+      "beat on medium speed until smooth.",
+      "add remaining ingredients, mixing well.",
+      "pour batter evenly over muffin cups.",
+      "bake at 350\u00b0f for 25-30 minutes or until cheese is melted and lightly browned on both sides.",
+      "remove from oven and cool on wire rack for 15 minutes."
+    ],
+    "ingredient_coverage": 0.3333333333333333,
+    "mentioned_ingredients": [
+      "sausage"
+    ],
+    "generated_tokens": 146,
+    "finished": true
+  }
+]

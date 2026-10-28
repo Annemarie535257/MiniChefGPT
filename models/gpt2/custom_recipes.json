@@ -1,0 +1,114 @@
+{
+  "Chicken dinner": {
+    "title": "chicken bbq",
+    "ingredients": [
+      "chicken",
+      "garlic",
+      "onion",
+      "tomato"
+    ],
+    "steps": [
+      "mix chicken, garlic, and onion in a large saucepan.",
+      "simmer for 5 minutes.",
+      "remove from heat and simmer for 1 hour.",
+      "add tomato and chicken mixture.",
+      "reduce heat and simmer for 5 minutes or until sauce thickens.",
+      "add chicken mixture and simmer for 1 minute more.",
+      "add tomato and cook for another minute.",
+      "remove from heat.",
+      "stir in chicken mixture and simmer until chicken is tender.",
+      "serve with rice, noodles, and rice."
+    ],
+    "ingredient_coverage": 1.0,
+    "mentioned_ingredients": [
+      "chicken",
+      "garlic",
+      "onion",
+      "tomato"
+    ],
+    "generated_tokens": 128,
+    "finished": true
+  },
+  "Vegetable pasta": {
+    "title": "pasta with tomato",
+    "ingredients": [
+      "pasta",
+      "tomato",
+      "garlic",
+      "basil"
+    ],
+    "steps": [
+      "heat oven to 400\u00b0f.",
+      "mix pasta with tomato.",
+      "cook, stirring occasionally, for 2 minutes.",
+      "add basil.",
+      "cook, stirring frequently, for 1 minute.",
+      "add garlic and basil.",
+      "cook, stirring often, for 1 minute more.",
+      "add remaining ingredients and cook for 1 minute more or until tomatoes are tender.",
+      "add pasta to the pasta mixture and stir to combine.",
+      "remove from heat and stir in tomatoes.",
+      "sprinkle with basil.",
+      "bake uncovered for 5 minutes."
+    ],
+    "ingredient_coverage": 1.0,
+    "mentioned_ingredients": [
+      "pasta",
+      "tomato",
+      "garlic",
+      "basil"
+    ],
+    "generated_tokens": 137,
+    "finished": true
+  },
+  "Cheese omelet": {
+    "title": "spinach and spinach salad",
+    "ingredients": [
+      "eggs",
+      "cheese",
+      "onion",
+      "spinach"
+    ],
+    "steps": [
+      "mix together eggs and cheese in a bowl.",
+      "mix spinach, onion and spinach in a large mixing bowl.",
+      "stir in spinach, onion and tomatoes.",
+      "sprinkle with remaining cheese.",
+      "place in oven at 350 degrees for 30-40 minutes.",
+      "cool completely before serving."
+    ],
+    "ingredient_coverage": 1.0,
+    "mentioned_ingredients": [
+      "eggs",
+      "cheese",
+      "onion",
+      "spinach"
+    ],
+    "generated_tokens": 79,
+    "finished": true
+  },
+  "Roasted vegetables": {
+    "title": "potato fries",
+    "ingredients": [
+      "potatoes",
+      "carrots",
+      "olive oil",
+      "rosemary"
+    ],
+    "steps": [
+      "combine potatoes, carrots and olive oil in a large bowl.",
+      "combine rosemary, potatoes and onion.",
+      "pour over potato fries.",
+      "cover and refrigerate for at least 24 hours."
+    ],
+    "ingredient_coverage": 1.0,
+    "mentioned_ingredients": [
+      "potatoes",
+      "carrots",
+      "olive oil",
+      "rosemary"
+    ],
+    "generated_tokens": 55,
+    "finished": true
+  }
+}

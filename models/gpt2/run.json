@@ -1,0 +1,7 @@
+{
+  "steps": 292,
+  "recipes_seen": 2336,
+  "stop_reason": "time_budget",
+  "elapsed_seconds": 3670.75,
+  "best_validation_subset_loss": 1.9798436992702007
+}

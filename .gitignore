@@ -4,6 +4,8 @@ __pycache__/
 .ipynb_checkpoints/
 models/**/*.pt
 models/*.pt
+# Fine-tuned GPT-2 weights are about 500 MB.
+models/gpt2/best/
 *.log
 
 # Required by the deployed Streamlit app.

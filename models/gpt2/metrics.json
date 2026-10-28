@@ -1,0 +1,63 @@
+{
+  "model": "gpt2",
+  "run": {
+    "steps": 292,
+    "recipes_seen": 2336,
+    "stop_reason": "time_budget",
+    "elapsed_seconds": 3670.75,
+    "best_validation_subset_loss": 1.9798436992702007
+  },
+  "pretrained_test": {
+    "loss": 2.4840816945454094,
+    "perplexity": 11.990104619273206,
+    "tokens": 65548
+  },
+  "validation": {
+    "loss": 2.0033227442247443,
+    "perplexity": 7.413648877539589,
+    "tokens": 68843
+  },
+  "test": {
+    "loss": 2.0180844966725244,
+    "perplexity": 7.5238990679756546,
+    "tokens": 65548
+  },
+  "truncated_recipes": {
+    "train": 1271,
+    "validation": 67,
+    "test": 67
+  },
+  "settings": {
+    "max_length": 256,
+    "batch_size": 8,
+    "learning_rate": 5e-05,
+    "training_minutes": 60,
+    "max_steps": 5000,
+    "seed": 42
+  },
+  "heldout_benchmark": {
+    "ingredient_mentions": 0.5613756613756613,
+    "end_marker_rate": 1.0,
+    "nonempty_steps_rate": 1.0,
+    "mean_steps": 8.166666666666666
+  },
+  "custom_benchmark": {
+    "ingredient_mentions": 1.0,
+    "end_marker_rate": 1.0,
+    "nonempty_steps_rate": 1.0,
+    "mean_steps": 8.0
+  },
+  "original_heldout_benchmark": {
+    "ingredient_mentions": 0.2746693121693122,
+    "end_marker_rate": 1.0,
+    "nonempty_steps_rate": 1.0,
+    "mean_steps": 6.333333333333333
+  },
+  "original_custom_benchmark": {
+    "ingredient_mentions": 0.5625,
+    "end_marker_rate": 1.0,
+    "nonempty_steps_rate": 1.0,
+    "mean_steps": 6.75
+  },
+  "quality_note": "Ingredient mentions do not measure recipe correctness. Inspect the drafts."
+}
