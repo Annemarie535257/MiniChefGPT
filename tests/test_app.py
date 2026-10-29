@@ -169,38 +169,16 @@ class RecipeAppTests(unittest.TestCase):
         self.assertIn('fine-tuned Qwen3 model is not available', app.info[0].value)
         self.assertTrue(next(b for b in app.button if b.label == 'Generate recipe').disabled)
 
-    def test_compare_runs_every_model_on_the_same_ingredients(self):
+    def test_offers_the_three_models_without_comparison_or_benchmark_sections(self):
         app = self.open_app()
-        app.radio[0].set_value('Compare all models').run()
-        app.text_area[0].input('pasta, tomato, garlic, basil')
-        self.click(app, 'Compare models')
-        expected = ['pasta', 'tomato', 'garlic', 'basil']
-        for generate in (self.generate_recipe, self.generate_gpt2, self.generate_qwen3):
-            generate.assert_called_once()
-            self.assertEqual(generate.call_args.args[2], expected)
-        self.assertIn('Model comparison', [heading.value for heading in app.subheader])
-        names = [text.value for text in app.markdown]
-        for name in ('**MiniChefGPT**', '**GPT-2 fine-tuned**', '**Qwen3 fine-tuned**'):
-            self.assertIn(name, names)
-        self.assertEqual([item['model'] for item in app.session_state['history']],
+        self.assertEqual(list(app.radio[0].options),
                          ['MiniChefGPT', 'GPT-2 fine-tuned', 'Qwen3 fine-tuned'])
-        self.assertNotIn('recipe', app.session_state)
-        self.assertIn('How the models perform', [heading.value for heading in app.subheader])
-
-    def test_compare_skips_unavailable_models(self):
-        self.qwen3_source.return_value = None
-        app = self.open_app()
-        app.radio[0].set_value('Compare all models').run()
-        self.assertTrue(any('skipped: Qwen3 fine-tuned' in caption.value for caption in app.caption))
-        app.text_area[0].input('eggs, cheese')
-        self.click(app, 'Compare models')
-        self.generate_qwen3.assert_not_called()
-        self.load_qwen3.assert_not_called()
-        results = {item['model']: item for item in app.session_state['comparison']}
-        self.assertEqual(results['Qwen3 fine-tuned']['error'], 'Not available here.')
-        self.assertIn('recipe', results['GPT-2 fine-tuned'])
-
-
+        app.text_area[0].input('pasta, basil')
+        self.click(app, 'Generate recipe')
+        headings = [heading.value for heading in app.subheader]
+        self.assertNotIn('How the models perform', headings)
+        self.assertNotIn('Model comparison', headings)
+        self.assertEqual(len(app.dataframe), 0)
 
     def test_small_server_loads_qwen3_in_16_bit_and_keeps_one_large_model(self):
         self.memory.return_value = 2.7  # about Streamlit Community Cloud's limit
