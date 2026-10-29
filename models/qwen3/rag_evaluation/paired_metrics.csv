@@ -1,0 +1,49 @@
+case,split,variant,seconds_refinement,ingredient_coverage,step_count,repeated_step_pairs,extra_ingredient_flags
+Chicken dinner,custom,GPT-2,,1.0,10,0,rice
+Chicken dinner,custom,GPT-2 + Qwen,23.538215500011574,1.0,9,0,cheese
+Chicken dinner,custom,GPT-2 + Qwen + RAG,15.752857599989511,0.0,0,0,cheese
+Vegetable pasta,custom,GPT-2,,1.0,12,0,
+Vegetable pasta,custom,GPT-2 + Qwen,13.985542900001747,0.5,5,0,
+Vegetable pasta,custom,GPT-2 + Qwen + RAG,20.558995800005505,0.5,8,0,
+Cheese omelet,custom,GPT-2,,1.0,6,0,tomato
+Cheese omelet,custom,GPT-2 + Qwen,15.674053199996706,1.0,7,0,tomato
+Cheese omelet,custom,GPT-2 + Qwen + RAG,15.986340100003872,1.0,6,0,
+Roasted vegetables,custom,GPT-2,,1.0,4,0,onion
+Roasted vegetables,custom,GPT-2 + Qwen,19.238889900007052,0.75,6,0,"bread, onion"
+Roasted vegetables,custom,GPT-2 + Qwen + RAG,23.397590799999307,0.0,0,0,onion
+heldout-2303,heldout,GPT-2,,1.0,8,0,
+heldout-2303,heldout,GPT-2 + Qwen,22.59601909999037,0.8,5,0,
+heldout-2303,heldout,GPT-2 + Qwen + RAG,15.94317859999137,0.8,5,0,
+heldout-5418,heldout,GPT-2,,1.0,14,0,"pepper, sugar, bread, salt"
+heldout-5418,heldout,GPT-2 + Qwen,9.946420399995986,0.0,0,0,
+heldout-5418,heldout,GPT-2 + Qwen + RAG,24.100072100001853,1.0,9,0,salt
+heldout-7454,heldout,GPT-2,,0.25,10,0,onion
+heldout-7454,heldout,GPT-2 + Qwen,18.003755300000194,0.0,10,0,"mushroom, garlic, onion"
+heldout-7454,heldout,GPT-2 + Qwen + RAG,9.276565199994366,0.0,0,0,
+heldout-9362,heldout,GPT-2,,0.667,5,0,bread
+heldout-9362,heldout,GPT-2 + Qwen,8.880074599990621,0.0,0,0,
+heldout-9362,heldout,GPT-2 + Qwen + RAG,19.712262999993982,0.0,0,0,
+heldout-4408,heldout,GPT-2,,0.25,6,0,
+heldout-4408,heldout,GPT-2 + Qwen,17.833997299996554,0.167,5,0,
+heldout-4408,heldout,GPT-2 + Qwen + RAG,15.743422200001078,0.0,0,0,
+heldout-4557,heldout,GPT-2,,0.778,11,0,"sugar, cream, flour"
+heldout-4557,heldout,GPT-2 + Qwen,26.086518299998716,0.0,0,0,
+heldout-4557,heldout,GPT-2 + Qwen + RAG,24.531355800005258,0.667,6,0,"sugar, flour"
+heldout-3908,heldout,GPT-2,,0.2,9,0,bread
+heldout-3908,heldout,GPT-2 + Qwen,38.57809619999898,0.2,8,0,bread
+heldout-3908,heldout,GPT-2 + Qwen + RAG,16.851869799997075,0.0,4,0,bread
+heldout-3888,heldout,GPT-2,,0.0,3,0,
+heldout-3888,heldout,GPT-2 + Qwen,18.348713699990185,0.333,5,0,
+heldout-3888,heldout,GPT-2 + Qwen + RAG,15.862896799997543,0.0,3,0,
+heldout-3064,heldout,GPT-2,,0.714,8,0,
+heldout-3064,heldout,GPT-2 + Qwen,20.567431500006933,0.714,6,0,potato
+heldout-3064,heldout,GPT-2 + Qwen + RAG,24.240010100009385,0.0,5,0,
+heldout-9795,heldout,GPT-2,,0.6,5,0,
+heldout-9795,heldout,GPT-2 + Qwen,22.437395899993135,0.0,7,0,
+heldout-9795,heldout,GPT-2 + Qwen + RAG,21.910808999993606,0.0,0,0,"butter, sugar, eggs, egg"
+heldout-6805,heldout,GPT-2,,0.667,9,0,
+heldout-6805,heldout,GPT-2 + Qwen,24.35746410000138,0.0,0,0,
+heldout-6805,heldout,GPT-2 + Qwen + RAG,14.668261799990432,0.0,0,0,
+heldout-4363,heldout,GPT-2,,0.333,10,0,"flour, milk, salt, eggs, egg"
+heldout-4363,heldout,GPT-2 + Qwen,29.397570799992536,0.0,11,0,"sugar, cream, flour, milk, eggs, egg"
+heldout-4363,heldout,GPT-2 + Qwen + RAG,23.61775169998873,0.0,0,0,"flour, milk, salt, eggs, egg"

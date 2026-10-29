@@ -1,0 +1,108 @@
+{
+  "Chicken dinner": {
+    "title": "chicken tomato",
+    "ingredients": [
+      "chicken",
+      "garlic",
+      "onion",
+      "tomato"
+    ],
+    "steps": [
+      "preheat oven to 400f.",
+      "in a large bowl, combine the chicken, garlic, and onion.",
+      "add the tomato and the remaining ingredients and mix well.",
+      "bake for 10-15 minutes, or until the chicken is browned and the tomato is tender.",
+      "let cool and serve."
+    ],
+    "ingredient_coverage": 1.0,
+    "mentioned_ingredients": [
+      "chicken",
+      "garlic",
+      "onion",
+      "tomato"
+    ],
+    "generated_tokens": 81,
+    "finished": true,
+    "raw_text": "Title: chicken tomato\nSteps:\n1. preheat oven to 400f.\n2. in a large bowl, combine the chicken, garlic, and onion.\n3. add the tomato and the remaining ingredients and mix well.\n4. bake for 10-15 minutes, or until the chicken is browned and the tomato is tender.\n5. let cool and serve."
+  },
+  "Vegetable pasta": {
+    "title": "tomato basil pasta",
+    "ingredients": [
+      "pasta",
+      "tomato",
+      "garlic",
+      "basil"
+    ],
+    "steps": [
+      "heat a large pan of water and bring to a boil.",
+      "add the pasta and cook for 3-4 minutes or until al dente.",
+      "drain the pasta and add the tomato, garlic and basil.",
+      "toss until the tomatoes and herbs are well coated.",
+      "serve with a small portion of olive oil and lemon juice over the pasta.",
+      "sprinkle with salt and pepper if you like."
+    ],
+    "ingredient_coverage": 1.0,
+    "mentioned_ingredients": [
+      "pasta",
+      "tomato",
+      "garlic",
+      "basil"
+    ],
+    "generated_tokens": 96,
+    "finished": true,
+    "raw_text": "Title: tomato basil pasta\nSteps:\n1. heat a large pan of water and bring to a boil.\n2. add the pasta and cook for 3-4 minutes or until al dente.\n3. drain the pasta and add the tomato, garlic and basil.\n4. toss until the tomatoes and herbs are well coated.\n5. serve with a small portion of olive oil and lemon juice over the pasta.\n6. sprinkle with salt and pepper if you like."
+  },
+  "Cheese omelet": {
+    "title": "spinach and cheese casserole",
+    "ingredients": [
+      "eggs",
+      "cheese",
+      "onion",
+      "spinach"
+    ],
+    "steps": [
+      "preheat oven to 350 degrees f.",
+      "in a large bowl, mix together eggs, cheese, and onion.",
+      "add spinach and stir until well blended.",
+      "spoon into 9x13-inch baking dish.",
+      "bake 35 minutes or until golden brown.",
+      "let cool for 10 minutes before serving."
+    ],
+    "ingredient_coverage": 1.0,
+    "mentioned_ingredients": [
+      "eggs",
+      "cheese",
+      "onion",
+      "spinach"
+    ],
+    "generated_tokens": 88,
+    "finished": true,
+    "raw_text": "Title: spinach and cheese casserole\nSteps:\n1. preheat oven to 350 degrees f.\n2. in a large bowl, mix together eggs, cheese, and onion.\n3. add spinach and stir until well blended.\n4. spoon into 9x13-inch baking dish.\n5. bake 35 minutes or until golden brown.\n6. let cool for 10 minutes before serving."
+  },
+  "Roasted vegetables": {
+    "title": "carrot potato salad",
+    "ingredients": [
+      "potatoes",
+      "carrots",
+      "olive oil",
+      "rosemary"
+    ],
+    "steps": [
+      "peel and slice potatoes and carrots into small cubes.",
+      "add to a large mixing bowl and stir well.",
+      "add olive oil and rosemary, stir until well mixed.",
+      "cover and chill for 30 minutes.",
+      "serve with crusty bread and lemon dressing."
+    ],
+    "ingredient_coverage": 1.0,
+    "mentioned_ingredients": [
+      "potatoes",
+      "carrots",
+      "olive oil",
+      "rosemary"
+    ],
+    "generated_tokens": 69,
+    "finished": true,
+    "raw_text": "Title: carrot potato salad\nSteps:\n1. peel and slice potatoes and carrots into small cubes.\n2. add to a large mixing bowl and stir well.\n3. add olive oil and rosemary, stir until well mixed.\n4. cover and chill for 30 minutes.\n5. serve with crusty bread and lemon dressing."
+  }
+}

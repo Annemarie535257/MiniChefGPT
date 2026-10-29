@@ -1,0 +1,422 @@
+[
+  {
+    "case": "Chicken dinner",
+    "split": "custom",
+    "recipe_id": null,
+    "reference_title": null,
+    "ingredients": [
+      "chicken",
+      "garlic",
+      "onion",
+      "tomato"
+    ],
+    "gpt2": "Title: chicken bbq\nSteps:\n1. mix chicken, garlic, and onion in a large saucepan.\n2. simmer for 5 minutes.\n3. remove from heat and simmer for 1 hour.\n4. add tomato and chicken mixture.\n5. reduce heat and simmer for 5 minutes or until sauce thickens.\n6. add chicken mixture and simmer for 1 minute more.\n7. add tomato and cook for another minute.\n8. remove from heat.\n9. stir in chicken mixture and simmer until chicken is tender.\n10. serve with rice, noodles, and rice.",
+    "gpt2_qwen": "Title: chicken grilled cheese\nSteps:\n2. combine chicken, garlic and onion in large bowl.\n3. place on high flame over medium heat and saute for 10 minutes.\n4. drain off any excess liquid and season well.\n5. put into baking dish.\n6. bake at 350 degrees f (175 c) for 20 minutes.\n7. top with remaining chicken mixture.\n8. sprinkle with tomato paste.\n9. bake for 15 minutes longer.\n10.serve immediately.",
+    "gpt2_qwen_rag": "Title: chicken grilled cheese\nSteps:\n- grill chicken pieces on medium-high heat for 10 to 12 minutes or until golden brown and cooked through.\n- transfer to a sheet dish and top with lettuce leaves and tomato slices.\n- sprinkle with cheese and serve.",
+    "retrieved_training_ids": [
+      "8183",
+      "5250",
+      "9331"
+    ],
+    "retrieved_training_titles": [
+      "marie's roast chicken",
+      "green beans in tomato salsa",
+      "crock pot chicken cacciatore"
+    ]
+  },
+  {
+    "case": "Vegetable pasta",
+    "split": "custom",
+    "recipe_id": null,
+    "reference_title": null,
+    "ingredients": [
+      "pasta",
+      "tomato",
+      "garlic",
+      "basil"
+    ],
+    "gpt2": "Title: pasta with tomato\nSteps:\n1. heat oven to 400°f.\n2. mix pasta with tomato.\n3. cook, stirring occasionally, for 2 minutes.\n4. add basil.\n5. cook, stirring frequently, for 1 minute.\n6. add garlic and basil.\n7. cook, stirring often, for 1 minute more.\n8. add remaining ingredients and cook for 1 minute more or until tomatoes are tender.\n9. add pasta to the pasta mixture and stir to combine.\n10. remove from heat and stir in tomatoes.\n11. sprinkle with basil.\n12. bake uncovered for 5 minutes.",
+    "gpt2_qwen": "Title: pasta and tomato\nSteps:\n\n1. preheat oven to 350°F (175°C).\n2. place pasta on baking sheet.\n3. cover with tomato slices.\n4. bake for 10 minutes.\n5. serve immediately.",
+    "gpt2_qwen_rag": "Title: pasta filled with tomato\nsteps:\n1. prepare pasta according to your usual recipe.\n2. drain pasta and set aside.\n3. heat oven mitts to 35 degrees celsius.\n4. put pasta into the oven mitts.\n5. pour tomato paste over pasta.\n6. let sit for about 10 seconds.\n7. repeat with remaining ingredients.\n8. serve immediately.",
+    "retrieved_training_ids": [
+      "1620",
+      "4928",
+      "5980"
+    ],
+    "retrieved_training_titles": [
+      "stuffed mushrooms",
+      "tomato pesto & chicken pasta",
+      "baked italian chicken"
+    ]
+  },
+  {
+    "case": "Cheese omelet",
+    "split": "custom",
+    "recipe_id": null,
+    "reference_title": null,
+    "ingredients": [
+      "eggs",
+      "cheese",
+      "onion",
+      "spinach"
+    ],
+    "gpt2": "Title: spinach and spinach salad\nSteps:\n1. mix together eggs and cheese in a bowl.\n2. mix spinach, onion and spinach in a large mixing bowl.\n3. stir in spinach, onion and tomatoes.\n4. sprinkle with remaining cheese.\n5. place in oven at 350 degrees for 30-40 minutes.\n6. cool completely before serving.",
+    "gpt2_qwen": "Title: spinach salad\nsteps:\n1. combine egg yolks and cheese in one bowl.\n2.sift spinach, onion, tomato and spinach into another bowl.\n3.stir well.\n4. add remaining cheese.\n8. heat in water until boiling (for steaming).\n9. cook spinach in hot water until tender.\n10. serve immediately.",
+    "gpt2_qwen_rag": "Title: spinach salad\nsteps:\n1. prepare spinach by boiling or steamed in water.\n2. cut spinach into small pieces.\n3. in a large bowl, mix together eggs, cheese and onion.\n4. add spinach and stir well.\n5. spoon salad onto plates.\n6. serve immediately.",
+    "retrieved_training_ids": [
+      "7139",
+      "1883",
+      "667"
+    ],
+    "retrieved_training_titles": [
+      "addicting broccoli casserole",
+      "cheese omelette",
+      "spinach quiche"
+    ]
+  },
+  {
+    "case": "Roasted vegetables",
+    "split": "custom",
+    "recipe_id": null,
+    "reference_title": null,
+    "ingredients": [
+      "potatoes",
+      "carrots",
+      "olive oil",
+      "rosemary"
+    ],
+    "gpt2": "Title: potato fries\nSteps:\n1. combine potatoes, carrots and olive oil in a large bowl.\n2. combine rosemary, potatoes and onion.\n3. pour over potato fries.\n4. cover and refrigerate for at least 24 hours.",
+    "gpt2_qwen": "Title: potato french fries\nSteps:\n\n1. combine potato mixture (potatoes, carrots and oil) in a large mixing bowl until smooth.\n2. add remaining ingredients (rosemary, onion).\n3. mix well.\n4. place potato mixture into greased baking dish.\n5. bake at 375 degrees f for about 8 minutes or until golden brown.\n6. serve on hot rye bread slices.",
+    "gpt2_qwen_rag": "Title: potato fried onions\nSteps:\n- combine potatoes, carrot and olive oil into a large bowl and mix well.\n- drain excess water and set aside.\n- combine remaining ingredients in a small bowl and mix thoroughly.\n- spoon mixture over potato mixture.\n- cover and refrigeration for at least two days.\n- serve hot.",
+    "retrieved_training_ids": [
+      "5035",
+      "2983",
+      "5732"
+    ],
+    "retrieved_training_titles": [
+      "special roasted veggies!",
+      "roasted chicken with peppers",
+      "roasted garlic potatoes"
+    ]
+  },
+  {
+    "case": "heldout-2303",
+    "split": "heldout",
+    "recipe_id": 2303,
+    "reference_title": "potatoes in foil",
+    "ingredients": [
+      "potatoes",
+      "onion",
+      "bacon",
+      "butter",
+      "cayenne"
+    ],
+    "gpt2": "Title: bacon and bacon salad\nSteps:\n1. preheat oven to 400°f.\n2. combine potatoes, onion, potatoes, bacon, butter and cayenne.\n3. mix well.\n4. place in a 2-quart skillet and cook until potatoes are tender.\n5. stir in butter and cay.\n6. toss with remaining bacon.\n7. bake at 350°f for about 10 minutes.\n8. cool completely before serving.",
+    "gpt2_qwen": "Title: bacon salad\nsteps:\n1. heat 2 tbsp butter in large skillet.\n2. add onions and saute until softened.\n3. add potato slices and bacon.\n4. cover skillet and simmer on medium heat until potatoes are soft.\n5. drain excess fat from pan and serve immediately.",
+    "gpt2_qwen_rag": "Title: bacon & potato salad\nSteps: \n1. heat 1 tbsp butter in large bowl.\n2. add potatoes, onion and bacon.\n3. stir until melted.\n4. spoon into 1 ½ quart bowl.\n5. sprinkle with remaining bacon and serve.",
+    "retrieved_training_ids": [
+      "5616",
+      "5081",
+      "4991"
+    ],
+    "retrieved_training_titles": [
+      "cream of mushroom scalloped potatoes",
+      "twice baked ranch potatoes",
+      "twice baked caesar potatoes"
+    ]
+  },
+  {
+    "case": "heldout-5418",
+    "split": "heldout",
+    "recipe_id": 5418,
+    "reference_title": "cucusebzaminee ( iranian potatoes)",
+    "ingredients": [
+      "potatoes",
+      "onion",
+      "eggs"
+    ],
+    "gpt2": "Title: potatoes with egg\nSteps:\n1. in a large pot, combine potatoes, onion and eggs.\n2. add the remaining ingredients and bring to a boil.\n3. reduce heat to medium.\n4. reduce heat to low.\n5. stir in potatoes and onion.\n6. cook for 3-4 minutes.\n7. remove from heat.\n8. drain and set aside.\n9. combine the potatoes, egg and salt in a bowl.\n10. combine the bread crumbs and sugar.\n11. add the potatoes, egg, salt and pepper.\n12. mix well.\n13. cover and cook on low for 2-3 hours.\n14. remove from heat and cool completely.",
+    "gpt2_qwen": "Title: potato egg soup\nSteps:\nbake at 350 degrees f (175 c) until browned.\ndrain and set aside.",
+    "gpt2_qwen_rag": "Title: potatoes and egg\nSteps: \n1. in large pot, mash potatoes and onions together until smooth.\n2. beat eggs and whisk them into the mashed potatoes.\n3. add remaining ingredients and stir well.\n4. bring to a simmer over medium heat.\n5. reduce heat and continue stirring until potatoes are tender.\n6. drain and let sit for 1 minute.\n7. combine the mashed potatoes, egg whites and salt.\n8. cover and bake at 400f for 15 minutes.\n9. remove from oven and allow to cool.",
+    "retrieved_training_ids": [
+      "4920",
+      "4799",
+      "3526"
+    ],
+    "retrieved_training_titles": [
+      "old-fashion potato pancakes",
+      "mirj's potato kugel",
+      "mom's potato salad"
+    ]
+  },
+  {
+    "case": "heldout-7454",
+    "split": "heldout",
+    "recipe_id": 7454,
+    "reference_title": "frank sinatra's sausage and green peppers",
+    "ingredients": [
+      "green bell peppers",
+      "olive oil",
+      "hot italian sausage",
+      "red wine"
+    ],
+    "gpt2": "Title: chinese sausage\nSteps:\n1. combine all ingredients in large mixing bowl.\n2. stir in sausage.\n3. add meat mixture and mix well.\n4. add sausage mixture and mix well again.\n5. add hot italian sausage.\n6. pour over the sausage.\n7. sprinkle with chopped onions.\n8. place on greased cookie sheet.\n9. bake in oven for 25 minutes.\n10. cool slightly.",
+    "gpt2_qwen": "title: chinese sausage (modified)\nsteps:\n1. heat oil in large mixing pot.\n2. sauté garlic until fragrant.\n3. cook onion until softened.\n4. stir into sausage mixture.\n5. continue stirring until thickened.\n6. add remaining ingredients and stir thoroughly.\n7. pour over sausage mixture.\n8. sprinkle with sliced mushrooms.\n9. cover and bake at 350 degrees f for 20 minutes.\n11. let cool slightly before serving.",
+    "gpt2_qwen_rag": "Title: chinese sausages\nSteps:\n- combine all ingredients.\n- stir in sausage and mix well.",
+    "retrieved_training_ids": [
+      "2391",
+      "4906",
+      "3192"
+    ],
+    "retrieved_training_titles": [
+      "italian sausage and pepper heroes",
+      "olive garden neapolitan ziti",
+      "chicago style deep-dish pizza"
+    ]
+  },
+  {
+    "case": "heldout-9362",
+    "split": "heldout",
+    "recipe_id": 9362,
+    "reference_title": "tangy cauliflower",
+    "ingredients": [
+      "cauliflower",
+      "sour cream",
+      "onion",
+      "prepared mustard",
+      "milk",
+      "cheddar cheese"
+    ],
+    "gpt2": "Title: cauliflower bread\nSteps:\n1. mix together the sour cream, onion and milk.\n2. add to the cauliflower.\n3. toss well.\n4. place in a greased 2 quart casserole dish.\n5. cover with foil and bake at 400 for 40 minutes.",
+    "gpt2_qwen": "Title: cauliflowerbread\nSteps:\nplace cauliflower on a greased baking sheet (no parchment paper), then brush with water, sprinkle with sour cream, onions and mustard, then bake at 375 degrees f for 45 minutes.",
+    "gpt2_qwen_rag": "Title: cauliflower casseroles\nSteps:\n- combine all ingredients in a large bowl.\n- spoon mixture into a 9-inch x 13-inch baking dish.\n-cover with foil and place in a pre-heated oven at high temperature.\n- bake until golden brown and bubbly, about 45 minutes.\n- remove from oven and let cool slightly before serving.",
+    "retrieved_training_ids": [
+      "6633",
+      "9695",
+      "9380"
+    ],
+    "retrieved_training_titles": [
+      "cauliflower casserole",
+      "chili dog casserole",
+      "cope's cauliflower casserole"
+    ]
+  },
+  {
+    "case": "heldout-4408",
+    "split": "heldout",
+    "recipe_id": 4408,
+    "reference_title": "double-baked stuffed taters",
+    "ingredients": [
+      "russet potatoes",
+      "olive oil",
+      "red onion",
+      "mushrooms",
+      "garlic",
+      "fresh lemon juice",
+      "fresh dill",
+      "dried dill",
+      "salt",
+      "black pepper",
+      "nonfat sour cream",
+      "parmesan cheese"
+    ],
+    "gpt2": "Title: potato salad with sour cream\nSteps:\n1. in a large bowl, combine potatoes, onion, mushrooms and garlic.\n2. mix well.\n3. drain and stir in parmesan cheese.\n4. mix in remaining ingredients.\n5. stir in dill.\n6. sprinkle with parmesan cheese and serve.",
+    "gpt2_qwen": "Title: potato salads with sour cream (sour cream)\nSteps:\n1.drain potatoes and onions and add to a large mixing bowl.\n2. add mushrooms and garlic and mix well.\n4. add sour cream and parmesan and mix until smooth.\n5. add dill and mix again.\n6. pour into a serving dish and spoon over parmesan.",
+    "gpt2_qwen_rag": "Title: potato salads with sour cream and dill\nSteps:\n- in a large mixing bowl, combine the potatoes, onion and mushrooms.\n- drain and stir the mixture.\n- add the sour cream and mix well.\n- stir in the dill and serve.",
+    "retrieved_training_ids": [
+      "9538",
+      "1293",
+      "5114"
+    ],
+    "retrieved_training_titles": [
+      "carrot dill velvet soup",
+      "mashed garlic & onion potatoes",
+      "garlic chicken pizza"
+    ]
+  },
+  {
+    "case": "heldout-4557",
+    "split": "heldout",
+    "recipe_id": 4557,
+    "reference_title": "tortilla espanola (spanish omelet)",
+    "ingredients": [
+      "potatoes",
+      "onion",
+      "cooked ham",
+      "salt",
+      "dried chile pequins",
+      "eggs",
+      "milk",
+      "salt",
+      "pepper"
+    ],
+    "gpt2": "Title: ham and potatoes\nSteps:\n1. combine potatoes, onion, bacon, ham, salt, chile pequin and egg.\n2. bring to a boil.\n3. reduce heat and simmer for 20 minutes.\n4. remove from heat and set aside.\n5. mix together potatoes, onion, ham, salt and pepper in a bowl.\n6. stir in eggs, milk, and salt.\n7. mix well.\n8. stir in flour, sugar and salt.\n9. stir in milk and mix well.\n10. add ham and cook for 30 minutes or until thickened and browned.\n11. serve with sour cream or other sour cream.",
+    "gpt2_qwen": "Title: ham & potato soup\nSteps:\npreheat oven to 350 degrees f (177 degrees c).\ncombine potatoes, onions, bacon, meat, salt, chili and eggs.\nbake at 355 degrees f (not sure if that's correct) for about 20 to 25 minutes or until done.\nmix remaining ingredients into one large pot.\nadd water and cover.\ncook on low heat for 2 hours or until thick and soft.\nserve hot.",
+    "gpt2_qwen_rag": "Title: ham & potatoes\nSteps: \n1. combine potato slices, onion, chopped ham, salt & pepper in a large bowl.\n2. mix in eggs, melted milk, salt & black pepper.\n3. mix well and pour into greased baking dish.\n4. sprinkle with flour, sugar & salt.\n5. stir in remaining milk and mix.\n6. add ham mixture and cook for about 30 mins or until thick and browned.",
+    "retrieved_training_ids": [
+      "3261",
+      "4029",
+      "9221"
+    ],
+    "retrieved_training_titles": [
+      "ham & cheese & onion mashed potatoes",
+      "onion mashed potatoes",
+      "country green beans"
+    ]
+  },
+  {
+    "case": "heldout-3908",
+    "split": "heldout",
+    "recipe_id": 3908,
+    "reference_title": "pork loin chops with garlic sauce",
+    "ingredients": [
+      "butter",
+      "flour",
+      "garlic",
+      "heavy cream",
+      "butter"
+    ],
+    "gpt2": "Title: blackberry bread\nSteps:\n1. preheat oven to 400 degrees f.\n2. preheat oven racks to 400 degrees f and grease and flour a 12 x 9\\\n3. .\n4. .\n5. .\n6. .\n7. .\n8. .\n9. .",
+    "gpt2_qwen": "Title: blackberries bread\nSteps:\n\n1. preheated oven to 350f (or 40c).\n2. place together the dough on a greased baking sheet and bake for about 1 hour until it's golden brown and puffy.\n3. cool completely before cutting into pieces.\n4. cut out any holes from the top of the loaf if you want to use the crust as a base for your bread.\n5. add the remaining ingredients to the dough and mix well.\n6. sprinkle the flour over the surface of the dough and continue mixing until no more flour remains.\n7. cover the dough with plastic wrap and refrigerate for at least 2 hours.\n8. when ready to bake, remove the plastic wrap and proceed to bake according to the original instructions.",
+    "gpt2_qwen_rag": "Title: black berry bread\nSteps: \n1. preheated oven to 275 degrees f.\n3. place all ingredients in a greased baking dish.\n4. bake for 1 hour, turning once halfway through.\n5. let cool for 1 minute before slicing.",
+    "retrieved_training_ids": [
+      "2792",
+      "9573",
+      "9785"
+    ],
+    "retrieved_training_titles": [
+      "emeril's creamed spinach",
+      "easy amish sugar cream pie",
+      "creamy alfredo sauce"
+    ]
+  },
+  {
+    "case": "heldout-3888",
+    "split": "heldout",
+    "recipe_id": 3888,
+    "reference_title": "chewy maple oat clusters",
+    "ingredients": [
+      "old fashioned oats",
+      "peanuts",
+      "sunflower seeds",
+      "raisins",
+      "butter",
+      "pure maple syrup"
+    ],
+    "gpt2": "Title: sweet maple syrup cookies\nSteps:\n1. place dry ingredients in a small bowl and mix well.\n2. pour into cookie sheet.\n3. bake at 350 for 30 minutes.",
+    "gpt2_qwen": "title: sweet maple syrups cookies\nsteps:\n1. combine dry ingredients in large bowl and stir until mixed.\n2. add melted butter and mixture together thoroughly.\n3. spread over cookie sheet.\n4. bake at low heat (around 35) for about 30-35 minutes.\n5. if you want more flavor, sprinkle with nuts or raisins as desired.",
+    "gpt2_qwen_rag": "Title: maple syrup cookies (sweet)\nSteps:\n1.place dry ingredients in bowl and mix thoroughly.\n2. spoon mixture into cookie sheet and bake at 400°F for 35 minutes.\n3. while baking, stir in maple syrups and nuts as needed.",
+    "retrieved_training_ids": [
+      "5646",
+      "6965",
+      "5344"
+    ],
+    "retrieved_training_titles": [
+      "cinnamon-apple oatmeal",
+      "maple syrup candy",
+      "old fashioned oatmeal cookies"
+    ]
+  },
+  {
+    "case": "heldout-3064",
+    "split": "heldout",
+    "recipe_id": 3064,
+    "reference_title": "country cornbread",
+    "ingredients": [
+      "flour",
+      "yellow cornmeal",
+      "baking powder",
+      "salt",
+      "baking soda",
+      "eggs",
+      "milk"
+    ],
+    "gpt2": "Title: crock pot cookie dough\nSteps:\n1. mix flour, cornmeal and baking powder together.\n2. beat in eggs, milk and salt.\n3. stir in milk and mix well.\n4. sprinkle with flour mixture.\n5. bake at 350 degrees for 20-25 minutes or until golden brown.\n6. cool completely.\n7. sprinkle with remaining flour mixture.\n8. bake at 350 for 15-20 minutes or until golden.",
+    "gpt2_qwen": "title: crock potato cookie dough\nsteps:\n1. combine flour, corn meal, baking powder and salt in large bowl.\n2. add eggs, milk, and salt.\n4. stir until mixed.\n5. sprinkle with the flour mixture.\n6. bake at high heat (350) for 25 minutes on medium power, turning occasionally.\n7. cool completely before sprinkling with remaining flour.",
+    "gpt2_qwen_rag": "Title: crook pot cookie dough (crock pot cookies)\nSteps:\n1.cook the dough according to the reference 1 instructions.\n2. place the dough in a 9x11-inch baking dish.\n3. cover the dish with plastic wrap and refrigerate for 1 hour.\n4. remove the plastic wrap and bake at 420 degrees for about 15 minutes.\n5. if you want to make more cookies, repeat the process.",
+    "retrieved_training_ids": [
+      "465",
+      "6489",
+      "8704"
+    ],
+    "retrieved_training_titles": [
+      "buttermilk jalapeno cornbread",
+      "cheddar cornmeal muffins",
+      "mexican cornbread casserole"
+    ]
+  },
+  {
+    "case": "heldout-9795",
+    "split": "heldout",
+    "recipe_id": 9795,
+    "reference_title": "deep fried mars bars",
+    "ingredients": [
+      "plain flour",
+      "cornflour",
+      "baking soda",
+      "milk",
+      "beer"
+    ],
+    "gpt2": "Title: chocolate brownie\nSteps:\n1. preheat oven to 375 degrees.\n2. in a large bowl, combine flour, cornflours, baking soda, and milk.\n3. add to the wet ingredients and mix well.\n4. pour into greased 9x13 baking dish.\n5. bake at 350 degrees for 30-35 minutes or until golden brown.",
+    "gpt2_qwen": "title: chocolate brownies\nsteps:\n1. prepare batter as above.\n2. place batter in greased 8x11 baking dish.\n3. bake at low temperature (350) for 35 minutes.\n4. remove from oven and let cool on wire rack.\n5. sprinkle with cocoa powder.\n6. if desired, sprinkle with additional cocoa powder.\n7. cover and refrigerate for 1 hour before serving.",
+    "gpt2_qwen_rag": "Title: chocolate cookies\nSteps:\n- in a small bowl, combine rolled oats, cocoa, eggs, sugar, cinnamon, and butter.\n- roll dough into balls about 1/2-inch thick.\n- place in greased cookie sheet.\n- bake at 400 degrees for about 6 minutes or until slightly puffed up.\n- if you like them softer, let sit 10 seconds before flipping.",
+    "retrieved_training_ids": [
+      "1210",
+      "4239",
+      "5908"
+    ],
+    "retrieved_training_titles": [
+      "banana fritters",
+      "cheese beer bread",
+      "chocolate coconut bars"
+    ]
+  },
+  {
+    "case": "heldout-6805",
+    "split": "heldout",
+    "recipe_id": 6805,
+    "reference_title": "cabbage casserole",
+    "ingredients": [
+      "cabbage",
+      "margarine",
+      "velveeta cheese"
+    ],
+    "gpt2": "Title: cheesy cabbage\nSteps:\n1. preheat oven to 350°f.\n2. place cabbage in a shallow bowl.\n3. mix margarine, velveleta, cheese and cabbage in a bowl.\n4. cover and let stand 20 minutes.\n5. chill, uncovered, until cheese is melted.\n6. place cabbage in refrigerator.\n7. cut cabbage into bite size pieces.\n8. roll out of the cabbage, and place in a greased 13x9 inch baking pan.\n9. bake at 350°f for 30 minutes, until golden brown.",
+    "gpt2_qwen": "Title: cheesy cabbages\nSteps:\nplace cabbage in a deep dish (13 x 9 inches).\nmix margarine, cheese and vegetable mixture in a large bowl.\ncover and refrigerate for 2 hours.\nchill the cabbage.\nslice into small cubes.\nroll out the cabbage about 1/2-inch thick.\nbake on a 35-degree f oven rack in a 13×9 inch baking sheet.\nbake 30 min., turning occasionally.\nrinse off and serve.",
+    "gpt2_qwen_rag": "Title: cheesy cabbages\nSteps:\nplace cabbage in a deep bowl.\nmix margarine, cheese and vegetable in a bowl and cover with plastic wrap.\nlet sit for 20 mins.\nchill and serve.",
+    "retrieved_training_ids": [
+      "3619",
+      "1112",
+      "1119"
+    ],
+    "retrieved_training_titles": [
+      "daddy's doggin' southern cabbage",
+      "jalapeno cheese grits",
+      "broccoli ala ritz casserole"
+    ]
+  },
+  {
+    "case": "heldout-4363",
+    "split": "heldout",
+    "recipe_id": 4363,
+    "reference_title": "english muffin pizzas",
+    "ingredients": [
+      "english muffins",
+      "mozzarella cheese",
+      "sausage"
+    ],
+    "gpt2": "Title: english muffins\nSteps:\n1. preheat oven to 350°f.\n2. spray muffin cups with nonstick cooking spray.\n3. in a large bowl, mix flour, baking soda and salt.\n4. combine egg yolks, milk, and sausage in large bowl.\n5. stir in flour mixture.\n6. beat on medium speed until smooth.\n7. add remaining ingredients, mixing well.\n8. pour batter evenly over muffin cups.\n9. bake at 350°f for 25-30 minutes or until cheese is melted and lightly browned on both sides.\n10. remove from oven and cool on wire rack for 15 minutes.",
+    "gpt2_qwen": "title: english muffin\nsteps:\n1. prepare muffin cups as per directions.\n2. coat muffin cups in nonstick cooking sprays.\n3. mix flour, sugar and baking powder into a small bowl.\n4. cream together egg yolk and milk.\n5. beat on high speed until light fluffy.\n6. add flour mixture.\n7. beat on low speed until light foam forms.\n8. fold in cheese.\n9. spoon batter over muffin cup.\n10.bake at 370°F for 20-25 minutes or until golden brown.\n11. cool on wire racks for 10 minutes.",
+    "gpt2_qwen_rag": "Title: english puff pastry\nSteps:\npreheat oven to its highest temperature setting.\nmix flour, baking powder and salt in a small bowl.\ncombine egg yolk, milk and sausage in a large mixing bowl.\nstir until smooth.\nadd remaining ingredients, stirring well.\npour batter evenly over puff pastry sheets.\nbake at 375°f for approximately 20 minutes or less.\nremove from oven and let cool on wire racks for 10 minutes.",
+    "retrieved_training_ids": [
+      "3776",
+      "3345",
+      "1791"
+    ],
+    "retrieved_training_titles": [
+      "sausage bread",
+      "super bowl mini pizzas",
+      "goldenrod eggs"
+    ]
+  }
+]

@@ -1,0 +1,384 @@
+[
+  {
+    "recipe_id": 2303,
+    "reference_title": "potatoes in foil",
+    "title": "crispy bacon potato",
+    "ingredients": [
+      "potatoes",
+      "onion",
+      "bacon",
+      "butter",
+      "cayenne"
+    ],
+    "steps": [
+      "peel and cut potatoes into 1/4 inch slices.",
+      "in a large skillet, cook bacon until crisp.",
+      "add potatoes, onion, and bacon.",
+      "cook until potatoes are tender and onion is tender.",
+      "add butter and cayenne.",
+      "cook until butter is melted and onions are tender.",
+      "drain potatoes and onion.",
+      "serve hot with salt and pepper.",
+      "if desired, add a splash of lemon juice."
+    ],
+    "ingredient_coverage": 1.0,
+    "mentioned_ingredients": [
+      "potatoes",
+      "onion",
+      "bacon",
+      "butter",
+      "cayenne"
+    ],
+    "generated_tokens": 106,
+    "finished": true,
+    "raw_text": "Title: crispy bacon potato\nSteps:\n1. peel and cut potatoes into 1/4 inch slices.\n2. in a large skillet, cook bacon until crisp.\n3. add potatoes, onion, and bacon.\n4. cook until potatoes are tender and onion is tender.\n5. add butter and cayenne.\n6. cook until butter is melted and onions are tender.\n7. drain potatoes and onion.\n8. serve hot with salt and pepper.\n9. if desired, add a splash of lemon juice."
+  },
+  {
+    "recipe_id": 5418,
+    "reference_title": "cucusebzaminee ( iranian potatoes)",
+    "title": "potato and egg",
+    "ingredients": [
+      "potatoes",
+      "onion",
+      "eggs"
+    ],
+    "steps": [
+      "boil potatoes and drain.",
+      "peel and chop onions.",
+      "in a large bowl, mix chopped onions and potatoes.",
+      "add eggs.",
+      "cook until the potatoes are tender.",
+      "serve hot."
+    ],
+    "ingredient_coverage": 1.0,
+    "mentioned_ingredients": [
+      "potatoes",
+      "onion",
+      "eggs"
+    ],
+    "generated_tokens": 55,
+    "finished": true,
+    "raw_text": "Title: potato and egg\nSteps:\n1. boil potatoes and drain.\n2. peel and chop onions.\n3. in a large bowl, mix chopped onions and potatoes.\n4. add eggs.\n5. cook until the potatoes are tender.\n6. serve hot."
+  },
+  {
+    "recipe_id": 7454,
+    "reference_title": "frank sinatra's sausage and green peppers",
+    "title": "green bell peppers with hot italian sausage and red wine",
+    "ingredients": [
+      "green bell peppers",
+      "olive oil",
+      "hot italian sausage",
+      "red wine"
+    ],
+    "steps": [
+      "preheat grill or oven to 350 degrees f.",
+      "heat 1/2 cup of olive oil in a large skillet.",
+      "cook the sausage until browned and removed from the pan, about 10 minutes.",
+      "add the peppers and cook for 2 minutes.",
+      "add the remaining 1/2 inch of olive oil.",
+      "cook peppers on medium until tender, about 3 minutes.",
+      "add the remaining sausage, stir well and cook for 3 minutes.",
+      "add the remaining wine and cook for 1 minute.",
+      "sprinkle with salt and pepper and serve."
+    ],
+    "ingredient_coverage": 0.25,
+    "mentioned_ingredients": [
+      "olive oil"
+    ],
+    "generated_tokens": 146,
+    "finished": true,
+    "raw_text": "Title: green bell peppers with hot italian sausage and red wine\nSteps:\n1. preheat grill or oven to 350 degrees f.\n2. heat 1/2 cup of olive oil in a large skillet.\n3. cook the sausage until browned and removed from the pan, about 10 minutes.\n4. add the peppers and cook for 2 minutes.\n5. add the remaining 1/2 inch of olive oil.\n6. cook peppers on medium until tender, about 3 minutes.\n7. add the remaining sausage, stir well and cook for 3 minutes.\n8. add the remaining wine and cook for 1 minute.\n9. sprinkle with salt and pepper and serve."
+  },
+  {
+    "recipe_id": 9362,
+    "reference_title": "tangy cauliflower",
+    "title": "1997",
+    "ingredients": [
+      "cauliflower",
+      "sour cream",
+      "onion",
+      "prepared mustard",
+      "milk",
+      "cheddar cheese"
+    ],
+    "steps": [
+      "in a large bowl, mix the cauliflower, sour cream and mustard together.",
+      "add the onion and mix well.",
+      "pour the mixture into a large saucepan.",
+      "cover the saucepan and bring to a boil.",
+      "reduce the heat and simmer for 30 minutes or until the cauliflower is tender.",
+      "drain and add the milk.",
+      "bring to a boil, then simmer for 10 minutes.",
+      "stir in the cheese and simmer for 1 minute.",
+      "cover and simmer for 5 minutes.",
+      "serve with crusty bread or crackers."
+    ],
+    "ingredient_coverage": 0.6666666666666666,
+    "mentioned_ingredients": [
+      "cauliflower",
+      "sour cream",
+      "onion",
+      "milk"
+    ],
+    "generated_tokens": 136,
+    "finished": true,
+    "raw_text": "Title: 1997\nSteps:\n1. in a large bowl, mix the cauliflower, sour cream and mustard together.\n2. add the onion and mix well.\n3. pour the mixture into a large saucepan.\n4. cover the saucepan and bring to a boil.\n5. reduce the heat and simmer for 30 minutes or until the cauliflower is tender.\n6. drain and add the milk.\n7. bring to a boil, then simmer for 10 minutes.\n8. stir in the cheese and simmer for 1 minute.\n9. cover and simmer for 5 minutes.\n10. serve with crusty bread or crackers."
+  },
+  {
+    "recipe_id": 4408,
+    "reference_title": "double-baked stuffed taters",
+    "title": "potato salad",
+    "ingredients": [
+      "russet potatoes",
+      "olive oil",
+      "red onion",
+      "mushrooms",
+      "garlic",
+      "fresh lemon juice",
+      "fresh dill",
+      "dried dill",
+      "salt",
+      "black pepper",
+      "nonfat sour cream",
+      "parmesan cheese"
+    ],
+    "steps": [
+      "in a large bowl, combine the potatoes, olive oil and lemon juice.",
+      "add the onion, mushrooms, and garlic.",
+      "toss to coat the potatoes with the oil and mixture.",
+      "pour the sour cream over the potatoes and spread the cheese over the top.",
+      "toss to coat and serve."
+    ],
+    "ingredient_coverage": 0.3333333333333333,
+    "mentioned_ingredients": [
+      "olive oil",
+      "mushrooms",
+      "garlic",
+      "fresh lemon juice"
+    ],
+    "generated_tokens": 74,
+    "finished": true,
+    "raw_text": "Title: potato salad\nSteps:\n1. in a large bowl, combine the potatoes, olive oil and lemon juice.\n2. add the onion, mushrooms, and garlic.\n3. toss to coat the potatoes with the oil and mixture.\n4. pour the sour cream over the potatoes and spread the cheese over the top.\n5. toss to coat and serve."
+  },
+  {
+    "recipe_id": 4557,
+    "reference_title": "tortilla espanola (spanish omelet)",
+    "title": "a simple potato lasagna",
+    "ingredients": [
+      "potatoes",
+      "onion",
+      "cooked ham",
+      "salt",
+      "dried chile pequins",
+      "eggs",
+      "milk",
+      "salt",
+      "pepper"
+    ],
+    "steps": [
+      "cook the potatoes in a large pot of water, covering with a lid, until tender. drain and peel.",
+      "cook the onions in the same pot until softened.",
+      "in a large bowl, combine the chopped potatoes, chopped onion, ham, salt and pepper.",
+      "add the cooked potatoes, chopped onion and ham to the pot and mix well.",
+      "heat the oil in a large saucepan and saute the potatoes and onion until tender.",
+      "add the chopped potatoes, onions and ham and cook for about 10 minutes.",
+      "add the chile, milk and eggs.",
+      "bring to a boil.",
+      "cover and cook for about an hour.",
+      "add the remaining chopped potatoes and cook for another 15 minutes.",
+      "serve hot."
+    ],
+    "ingredient_coverage": 0.8888888888888888,
+    "mentioned_ingredients": [
+      "potatoes",
+      "onion",
+      "cooked ham",
+      "salt",
+      "eggs",
+      "milk",
+      "salt",
+      "pepper"
+    ],
+    "generated_tokens": 176,
+    "finished": true,
+    "raw_text": "Title: a simple potato lasagna\nSteps:\n1. cook the potatoes in a large pot of water, covering with a lid, until tender. drain and peel.\n2. cook the onions in the same pot until softened.\n3. in a large bowl, combine the chopped potatoes, chopped onion, ham, salt and pepper.\n4. add the cooked potatoes, chopped onion and ham to the pot and mix well.\n5. heat the oil in a large saucepan and saute the potatoes and onion until tender.\n6. add the chopped potatoes, onions and ham and cook for about 10 minutes.\n7. add the chile, milk and eggs.\n8. bring to a boil.\n9. cover and cook for about an hour.\n10. add the remaining chopped potatoes and cook for another 15 minutes.\n11. serve hot."
+  },
+  {
+    "recipe_id": 3908,
+    "reference_title": "pork loin chops with garlic sauce",
+    "title": "cream cheese frosting",
+    "ingredients": [
+      "butter",
+      "flour",
+      "garlic",
+      "heavy cream",
+      "butter"
+    ],
+    "steps": [
+      "in a small bowl, combine cream and butter.",
+      "in a large bowl, cream the butter and flour until the flour is blended in.",
+      "add the garlic and cream mixture, and mix until the cream is incorporated.",
+      "spread over a 9x12 baking sheet, and frost.",
+      "sprinkle with remaining butter.",
+      "bake at 350 degrees for 15-20 minutes or until the frosting is set.",
+      "if the frosting is too dry, you can add a bit of milk or cream to it to help it set properly."
+    ],
+    "ingredient_coverage": 0.8,
+    "mentioned_ingredients": [
+      "butter",
+      "flour",
+      "garlic",
+      "butter"
+    ],
+    "generated_tokens": 130,
+    "finished": true,
+    "raw_text": "Title: cream cheese frosting\nSteps:\n1. in a small bowl, combine cream and butter.\n2. in a large bowl, cream the butter and flour until the flour is blended in.\n3. add the garlic and cream mixture, and mix until the cream is incorporated.\n4. spread over a 9x12 baking sheet, and frost.\n5. sprinkle with remaining butter.\n6. bake at 350 degrees for 15-20 minutes or until the frosting is set.\n7. if the frosting is too dry, you can add a bit of milk or cream to it to help it set properly."
+  },
+  {
+    "recipe_id": 3888,
+    "reference_title": "chewy maple oat clusters",
+    "title": "a spicy peanut butter cookie dough",
+    "ingredients": [
+      "old fashioned oats",
+      "peanuts",
+      "sunflower seeds",
+      "raisins",
+      "butter",
+      "pure maple syrup"
+    ],
+    "steps": [
+      "combine the oats, peanuts, seeds, raisins and butter in a bowl.",
+      "mix in the maple syrup.",
+      "roll out the dough.",
+      "sprinkle the peanut butter on top of the dough.",
+      "sprinkle the raisins on top of the peanut butter.",
+      "spread the remaining peanut butter over the top of the raisins.",
+      "bake at 350 degrees for 40 minutes.",
+      "let cool for a few minutes before cutting."
+    ],
+    "ingredient_coverage": 0.5,
+    "mentioned_ingredients": [
+      "peanuts",
+      "raisins",
+      "butter"
+    ],
+    "generated_tokens": 111,
+    "finished": true,
+    "raw_text": "Title: a spicy peanut butter cookie dough\nSteps:\n1. combine the oats, peanuts, seeds, raisins and butter in a bowl.\n2. mix in the maple syrup.\n3. roll out the dough.\n4. sprinkle the peanut butter on top of the dough.\n5. sprinkle the raisins on top of the peanut butter.\n6. spread the remaining peanut butter over the top of the raisins.\n7. bake at 350 degrees for 40 minutes.\n8. let cool for a few minutes before cutting."
+  },
+  {
+    "recipe_id": 3064,
+    "reference_title": "country cornbread",
+    "title": "fried cornbread",
+    "ingredients": [
+      "flour",
+      "yellow cornmeal",
+      "baking powder",
+      "salt",
+      "baking soda",
+      "eggs",
+      "milk"
+    ],
+    "steps": [
+      "combine all ingredients in a large bowl.",
+      "beat egg mixture and mix well.",
+      "pour batter into a 10x12 inch baking dish.",
+      "bake at 350 degrees for 40 minutes.",
+      "cool before serving."
+    ],
+    "ingredient_coverage": 0.14285714285714285,
+    "mentioned_ingredients": [
+      "eggs"
+    ],
+    "generated_tokens": 65,
+    "finished": true,
+    "raw_text": "Title: fried cornbread\nSteps:\n1. combine all ingredients in a large bowl.\n2. beat egg mixture and mix well.\n3. pour batter into a 10x12 inch baking dish.\n4. bake at 350 degrees for 40 minutes.\n5. cool before serving."
+  },
+  {
+    "recipe_id": 9795,
+    "reference_title": "deep fried mars bars",
+    "title": "cornbread with cornflour",
+    "ingredients": [
+      "plain flour",
+      "cornflour",
+      "baking soda",
+      "milk",
+      "beer"
+    ],
+    "steps": [
+      "in a large bowl, mix the cornflour and the remaining ingredients.",
+      "in a small bowl, combine the cornflour with the milk and beer.",
+      "in a small saucepan, cook the cornflour mixture until it becomes a smooth, light brown paste.",
+      "add the remaining cornflour and mix until the cornflour is blended.",
+      "combine the cornflair with the remaining ingredients.",
+      "add the cornflour to the batter and mix until smooth.",
+      "in a greased 9x13 baking pan, grease with butter.",
+      "in a small ovenproof bowl, mix the flour and cornflour until the cornflair is smooth and well blended.",
+      "in a small, 2x2-inch baking pan, spread the cornflour over the top of the batter.",
+      "add the cornbread mixture to the cornflour.",
+      "bake at 350\u00b0f for 30 minutes.",
+      "cool on a wire rack."
+    ],
+    "ingredient_coverage": 0.6,
+    "mentioned_ingredients": [
+      "cornflour",
+      "milk",
+      "beer"
+    ],
+    "generated_tokens": 227,
+    "finished": true,
+    "raw_text": "Title: cornbread with cornflour\nSteps:\n1. in a large bowl, mix the cornflour and the remaining ingredients.\n2. in a small bowl, combine the cornflour with the milk and beer.\n3. in a small saucepan, cook the cornflour mixture until it becomes a smooth, light brown paste.\n4. add the remaining cornflour and mix until the cornflour is blended.\n5. combine the cornflair with the remaining ingredients.\n6. add the cornflour to the batter and mix until smooth.\n7. in a greased 9x13 baking pan, grease with butter.\n8. in a small ovenproof bowl, mix the flour and cornflour until the cornflair is smooth and well blended.\n9. in a small, 2x2-inch baking pan, spread the cornflour over the top of the batter.\n10. add the cornbread mixture to the cornflour.\n11. bake at 350\u00b0f for 30 minutes.\n12. cool on a wire rack."
+  },
+  {
+    "recipe_id": 6805,
+    "reference_title": "cabbage casserole",
+    "title": "cheese cabbage salad",
+    "ingredients": [
+      "cabbage",
+      "margarine",
+      "velveeta cheese"
+    ],
+    "steps": [
+      "preheat oven to 400f.",
+      "combine cabbage, margarine and cheese in a large bowl.",
+      "pour the mixture over the surface of the oven and bake for 20 minutes.",
+      "cool the cabbage mixture on a sheet of aluminum foil.",
+      "serve with bread or crackers."
+    ],
+    "ingredient_coverage": 0.6666666666666666,
+    "mentioned_ingredients": [
+      "cabbage",
+      "margarine"
+    ],
+    "generated_tokens": 75,
+    "finished": true,
+    "raw_text": "Title: cheese cabbage salad\nSteps:\n1. preheat oven to 400f.\n2. combine cabbage, margarine and cheese in a large bowl.\n3. pour the mixture over the surface of the oven and bake for 20 minutes.\n4. cool the cabbage mixture on a sheet of aluminum foil.\n5. serve with bread or crackers."
+  },
+  {
+    "recipe_id": 4363,
+    "reference_title": "english muffin pizzas",
+    "title": "sausage and cheese english muffins",
+    "ingredients": [
+      "english muffins",
+      "mozzarella cheese",
+      "sausage"
+    ],
+    "steps": [
+      "preheat oven to 350f.",
+      "place 1/2 of the mozzarella cheese in a 10x10 baking pan, and 1/2 in the remaining pan.",
+      "add the 1/2 pound of sausage, and the 1/3 pound of sausage.",
+      "sprinkle with salt and pepper.",
+      "bake for 30 minutes or until the cheese is melted and the sausage is browned.",
+      "sprinkle with a few drops of oil, and bake for 15 minutes.",
+      "serve on a plate with a few slices of bread and a few pieces of cheese."
+    ],
+    "ingredient_coverage": 0.6666666666666666,
+    "mentioned_ingredients": [
+      "mozzarella cheese",
+      "sausage"
+    ],
+    "generated_tokens": 145,
+    "finished": true,
+    "raw_text": "Title: sausage and cheese english muffins\nSteps:\n1. preheat oven to 350f.\n2. place 1/2 of the mozzarella cheese in a 10x10 baking pan, and 1/2 in the remaining pan.\n3. add the 1/2 pound of sausage, and the 1/3 pound of sausage.\n4. sprinkle with salt and pepper.\n5. bake for 30 minutes or until the cheese is melted and the sausage is browned.\n6. sprinkle with a few drops of oil, and bake for 15 minutes.\n7. serve on a plate with a few slices of bread and a few pieces of cheese."
+  }
+]
