@@ -16,14 +16,19 @@ if (ROOT / '.runtime').is_dir():
 import streamlit as st
 
 CHECKPOINT = ROOT / 'models' / 'refactored' / 'minichefgpt_best.pt'
-# Local folders from the fine-tuning notebooks, or Hugging Face ids set by environment.
+# Each model loads from an environment setting if given, else the local folder from its notebook,
+# else the copy published on Hugging Face.
 GPT2_MODEL = os.environ.get('MINICHEF_GPT2_MODEL', '')
 GPT2_DIR = ROOT / 'models' / 'gpt2' / 'best'
+GPT2_HUB_ID = 'Annemarie535257/minichef-gpt2'
 QWEN3_ADAPTER = os.environ.get('MINICHEF_QWEN3_ADAPTER', '')
 QWEN3_DIR = ROOT / 'models' / 'qwen3' / 'adapter'
-# 'auto' turns Qwen3 off where memory is too small (such as Streamlit Community Cloud); 'on' or 'off' force it.
+QWEN3_HUB_ID = 'Annemarie535257/qwen_model'
+# 'auto' adapts to the server's memory; 'off' hides Qwen3; 'on' skips the memory check.
 QWEN3_SETTING = os.environ.get('MINICHEF_QWEN3', 'auto').strip().lower()
-QWEN3_MIN_MEMORY_GB = 3.5  # the merged 32-bit model needs about 2.5 GB, plus the other models and Streamlit
+# Measured peaks for Qwen3 on CPU: about 3.5 GB in 32-bit and 2.0 GB in 16-bit (bfloat16).
+FULL_MEMORY_GB = 6.0       # below this, Qwen3 loads in 16-bit and only one large model stays in memory
+QWEN3_MIN_MEMORY_GB = 2.4  # below this, Qwen3 is turned off
 CPU_THREADS = int(os.environ.get('MINICHEF_THREADS', min(4, os.cpu_count() or 2)))
 
 MINICHEF, GPT2, QWEN3, COMPARE = 'MiniChefGPT', 'GPT-2 fine-tuned', 'Qwen3 fine-tuned', 'Compare all models'
@@ -31,7 +36,8 @@ MODEL_NAMES = [MINICHEF, GPT2, QWEN3]
 MODEL_DESCRIPTIONS = {
     MINICHEF: 'Small Transformer trained from scratch on 9,000 recipes (1M parameters). Fastest.',
     GPT2: 'Pretrained GPT-2 fine-tuned on the same recipes (124M parameters). Slower, more fluent.',
-    QWEN3: 'Qwen3-0.6B chat model with a LoRA adapter trained on the same recipes (600M parameters). Slowest.',
+    QWEN3: ('Qwen3-0.6B chat model with a LoRA adapter trained on the same recipes (600M parameters). Slowest; '
+            'the first request downloads the 1.5 GB base model.'),
     COMPARE: 'Run the same ingredients through every available model and compare them side by side.',
 }
 MISSING_MESSAGES = {
@@ -83,9 +89,11 @@ def gpt2_source():
     """Return where the fine-tuned GPT-2 model can be loaded from, or None."""
     if GPT2_MODEL:
         return GPT2_MODEL
-    if (GPT2_DIR / 'config.json').is_file() and (GPT2_DIR / 'model.safetensors').is_file():
+    weights = GPT2_DIR / 'model.safetensors'
+    # A Git LFS pointer is a tiny text file; the real weights are about 500 MB.
+    if (GPT2_DIR / 'config.json').is_file() and weights.is_file() and weights.stat().st_size > 1_000_000:
         return str(GPT2_DIR)
-    return None
+    return GPT2_HUB_ID
 
 
 @st.cache_resource(show_spinner=False)
@@ -116,8 +124,14 @@ def memory_limit_gb():
     return min(limits) / 1024**3 if limits else None
 
 
+def low_memory():
+    """True on small servers such as Streamlit Community Cloud."""
+    memory = memory_limit_gb()
+    return memory is not None and memory < FULL_MEMORY_GB
+
+
 def qwen3_memory_blocked():
-    """Return the memory limit in GB when it is too small for Qwen3, otherwise None."""
+    """Return the memory limit in GB when it is too small even for 16-bit Qwen3, otherwise None."""
     if QWEN3_SETTING == 'on':
         return None
     memory = memory_limit_gb()
@@ -130,20 +144,32 @@ def qwen3_source():
         return None
     if QWEN3_ADAPTER:
         return QWEN3_ADAPTER
-    if (QWEN3_DIR / 'adapter_config.json').is_file() and (QWEN3_DIR / 'adapter_model.safetensors').is_file():
+    weights = QWEN3_DIR / 'adapter_model.safetensors'
+    if (QWEN3_DIR / 'adapter_config.json').is_file() and weights.is_file() and weights.stat().st_size > 1_000_000:
         return str(QWEN3_DIR)
-    return None
+    return QWEN3_HUB_ID
 
 
 @st.cache_resource(show_spinner=False)
-def load_qwen3_resources(source, version):
-    """Cache Qwen3 with its adapter merged, by source and file version."""
+def load_qwen3_resources(source, version, half_precision):
+    """Cache Qwen3 with its adapter merged, by source, file version, and precision."""
     import torch
     from qwen3_recipes import load_qwen3
 
     torch.set_num_threads(CPU_THREADS)
-    model, tokenizer = load_qwen3(source, device='cpu')
+    model, tokenizer = load_qwen3(source, device='cpu', dtype=torch.bfloat16 if half_precision else None)
     return model, tokenizer, threading.Lock()
+
+
+def keep_one_large_model(model_name):
+    """On small servers, unload the other large model before loading this one."""
+    if not low_memory():
+        return
+    other = {GPT2: load_qwen3_resources, QWEN3: load_gpt2_resources}.get(model_name)
+    if other is not None:
+        other.clear()
+        import gc
+        gc.collect()
 
 
 def model_available(model_name):
@@ -160,7 +186,7 @@ def missing_message(model_name):
             return 'Qwen3 is turned off on this server (MINICHEF_QWEN3 = "off").'
         memory = qwen3_memory_blocked()
         if memory is not None:
-            return (f'Qwen3 needs about 2.5 GB of memory, and this server has {memory:.1f} GB, so it is turned off '
+            return (f'Qwen3 needs about 2 GB of memory, and this server has {memory:.1f} GB, so it is turned off '
                     'here to keep the app from crashing. Run the app on your own computer to use Qwen3.')
     return MISSING_MESSAGES[model_name]
 
@@ -172,6 +198,7 @@ def file_version(source, local_dir, weights):
 def generate(model_name, ingredients):
     seed = secrets.randbelow(2**31)
     candidates = CANDIDATES[model_name]
+    keep_one_large_model(model_name)
     if model_name == GPT2:
         source = gpt2_source()
         model, tokenizer, lock = load_gpt2_resources(source, file_version(source, GPT2_DIR, 'model.safetensors'))
@@ -181,7 +208,7 @@ def generate(model_name, ingredients):
     if model_name == QWEN3:
         source = qwen3_source()
         model, tokenizer, lock = load_qwen3_resources(
-            source, file_version(source, QWEN3_DIR, 'adapter_model.safetensors'))
+            source, file_version(source, QWEN3_DIR, 'adapter_model.safetensors'), low_memory())
         from qwen3_recipes import generate_qwen3_recipe
         with lock:
             return generate_qwen3_recipe(model, tokenizer, ingredients, candidates=candidates, seed=seed)

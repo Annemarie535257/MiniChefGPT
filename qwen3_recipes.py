@@ -56,8 +56,12 @@ def parse_recipe(text, ingredients, generated_tokens, finished):
             'generated_tokens': generated_tokens, 'finished': finished, 'raw_text': text}
 
 
-def load_qwen3(adapter, device='cpu', merge=True):
-    """Load the base model named in the adapter, apply the LoRA adapter, and merge it for faster inference."""
+def load_qwen3(adapter, device='cpu', merge=True, dtype=None):
+    """Load the base model named in the adapter, apply the LoRA adapter, and merge it for faster inference.
+
+    `adapter` is a local folder or a Hugging Face id. `dtype=torch.bfloat16` roughly halves CPU memory
+    (about 2 GB peak instead of 3.5 GB) with the same recipes; the default is 32-bit on CPU.
+    """
     from peft import PeftModel
     from transformers import AutoModelForCausalLM, AutoTokenizer
 
@@ -65,7 +69,8 @@ def load_qwen3(adapter, device='cpu', merge=True):
     config_path = Path(adapter) / 'adapter_config.json'
     base = json.loads(config_path.read_text(encoding='utf-8'))['base_model_name_or_path'] \
         if config_path.is_file() else BASE_MODEL
-    dtype = torch.float16 if str(device).startswith('cuda') else torch.float32
+    if dtype is None:
+        dtype = torch.float16 if str(device).startswith('cuda') else torch.float32
     tokenizer = AutoTokenizer.from_pretrained(adapter)
     model = AutoModelForCausalLM.from_pretrained(base, dtype=dtype).to(device)
     model = PeftModel.from_pretrained(model, adapter)
