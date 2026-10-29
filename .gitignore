@@ -6,6 +6,12 @@ models/**/*.pt
 models/*.pt
 *.log
 
+# Qwen3 work, kept local for now.
+MiniChefGPT_Qwen3_Training.ipynb
+models/qwen3/
+qwen3_recipes.py
+tests/test_qwen3_recipes.py
+
 # Required by the deployed Streamlit app.
 !models/refactored/minichefgpt_best.pt
 .streamlit/secrets.toml
