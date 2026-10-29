@@ -196,5 +196,38 @@ class RecipeAppTests(unittest.TestCase):
         self.assertIn('recipe', results['GPT-2 fine-tuned'])
 
 
+
+class Qwen3MemoryGateTests(unittest.TestCase):
+    """Qwen3 is turned off automatically where memory is too small, such as Streamlit Community Cloud."""
+
+    def setUp(self):
+        folder = mock.MagicMock()
+        folder.__truediv__.return_value.is_file.return_value = True
+        folder.__str__.return_value = 'models/qwen3/adapter'
+        for patch in (mock.patch.object(recipe_app, 'QWEN3_DIR', folder),
+                      mock.patch.object(recipe_app, 'QWEN3_ADAPTER', '')):
+            patch.start()
+            self.addCleanup(patch.stop)
+
+    def check(self, setting, memory):
+        with mock.patch.object(recipe_app, 'QWEN3_SETTING', setting),                 mock.patch.object(recipe_app, 'memory_limit_gb', return_value=memory):
+            return recipe_app.qwen3_source(), recipe_app.missing_message('Qwen3 fine-tuned')
+
+    def test_small_server_turns_qwen3_off_with_explanation(self):
+        source, message = self.check('auto', 2.7)
+        self.assertIsNone(source)
+        self.assertIn('this server has 2.7 GB', message)
+
+    def test_large_or_unknown_memory_keeps_qwen3(self):
+        self.assertEqual(self.check('auto', 15.6)[0], 'models/qwen3/adapter')
+        self.assertEqual(self.check('auto', None)[0], 'models/qwen3/adapter')
+
+    def test_settings_override_the_memory_check(self):
+        self.assertEqual(self.check('on', 1.0)[0], 'models/qwen3/adapter')
+        source, message = self.check('off', 64.0)
+        self.assertIsNone(source)
+        self.assertIn('turned off', message)
+
+
 if __name__ == '__main__':
     unittest.main()

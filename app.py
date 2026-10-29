@@ -21,6 +21,9 @@ GPT2_MODEL = os.environ.get('MINICHEF_GPT2_MODEL', '')
 GPT2_DIR = ROOT / 'models' / 'gpt2' / 'best'
 QWEN3_ADAPTER = os.environ.get('MINICHEF_QWEN3_ADAPTER', '')
 QWEN3_DIR = ROOT / 'models' / 'qwen3' / 'adapter'
+# 'auto' turns Qwen3 off where memory is too small (such as Streamlit Community Cloud); 'on' or 'off' force it.
+QWEN3_SETTING = os.environ.get('MINICHEF_QWEN3', 'auto').strip().lower()
+QWEN3_MIN_MEMORY_GB = 3.5  # the merged 32-bit model needs about 2.5 GB, plus the other models and Streamlit
 CPU_THREADS = int(os.environ.get('MINICHEF_THREADS', min(4, os.cpu_count() or 2)))
 
 MINICHEF, GPT2, QWEN3, COMPARE = 'MiniChefGPT', 'GPT-2 fine-tuned', 'Qwen3 fine-tuned', 'Compare all models'
@@ -96,8 +99,35 @@ def load_gpt2_resources(source, version):
     return model, tokenizer, threading.Lock()
 
 
+def memory_limit_gb():
+    """Smallest of the machine's RAM and any container (cgroup) memory limit, or None if unknown."""
+    limits = []
+    try:
+        limits.append(os.sysconf('SC_PAGE_SIZE') * os.sysconf('SC_PHYS_PAGES'))
+    except (AttributeError, ValueError, OSError):
+        pass
+    for path in ('/sys/fs/cgroup/memory.max', '/sys/fs/cgroup/memory/memory.limit_in_bytes'):
+        try:
+            value = Path(path).read_text().strip()
+        except OSError:
+            continue
+        if value.isdigit():
+            limits.append(int(value))
+    return min(limits) / 1024**3 if limits else None
+
+
+def qwen3_memory_blocked():
+    """Return the memory limit in GB when it is too small for Qwen3, otherwise None."""
+    if QWEN3_SETTING == 'on':
+        return None
+    memory = memory_limit_gb()
+    return memory if memory is not None and memory < QWEN3_MIN_MEMORY_GB else None
+
+
 def qwen3_source():
     """Return where the Qwen3 LoRA adapter can be loaded from, or None. The base model downloads separately."""
+    if QWEN3_SETTING == 'off' or qwen3_memory_blocked() is not None:
+        return None
     if QWEN3_ADAPTER:
         return QWEN3_ADAPTER
     if (QWEN3_DIR / 'adapter_config.json').is_file() and (QWEN3_DIR / 'adapter_model.safetensors').is_file():
@@ -122,6 +152,17 @@ def model_available(model_name):
     if model_name == QWEN3:
         return qwen3_source() is not None
     return CHECKPOINT.is_file()
+
+
+def missing_message(model_name):
+    if model_name == QWEN3:
+        if QWEN3_SETTING == 'off':
+            return 'Qwen3 is turned off on this server (MINICHEF_QWEN3 = "off").'
+        memory = qwen3_memory_blocked()
+        if memory is not None:
+            return (f'Qwen3 needs about 2.5 GB of memory, and this server has {memory:.1f} GB, so it is turned off '
+                    'here to keep the app from crashing. Run the app on your own computer to use Qwen3.')
+    return MISSING_MESSAGES[model_name]
 
 
 def file_version(source, local_dir, weights):
@@ -301,7 +342,7 @@ h2, h3 { letter-spacing: -0.02em; }
             st.caption(MODEL_DESCRIPTIONS[model_name])
             model_missing = model_name != COMPARE and not model_available(model_name)
             if model_missing:
-                st.info(MISSING_MESSAGES[model_name])
+                st.info(missing_message(model_name))
             elif model_name == COMPARE:
                 unavailable = [name for name in MODEL_NAMES if not model_available(name)]
                 if unavailable:
@@ -362,8 +403,8 @@ h2, h3 { letter-spacing: -0.02em; }
                     'Model': result['model'],
                     'Title': result['recipe']['title'].strip().capitalize() if 'recipe' in result else '—',
                     'Ingredients mentioned': percent(result['recipe'].get('ingredient_coverage')) if 'recipe' in result else '—',
-                    'Steps': len(result['recipe']['steps']) if 'recipe' in result else '—',
-                    'Time (s)': round(result['seconds'], 1) if 'recipe' in result else '—',
+                    'Steps': len(result['recipe']['steps']) if 'recipe' in result else None,
+                    'Time (s)': round(result['seconds'], 1) if 'recipe' in result else None,
                 } for result in comparison], hide_index=True, width='stretch')
                 st.caption('Each model’s full recipe is shown below.')
             elif recipe is None:
