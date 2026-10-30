@@ -1,6 +1,8 @@
 """Exercise the Streamlit interface without loading or training a model."""
 
 from pathlib import Path
+import threading
+import tempfile
 import unittest
 from unittest import mock
 
@@ -31,6 +33,17 @@ class RecipeAppTests(unittest.TestCase):
         self.generate_recipe = self.generate_patch.start()
         self.addCleanup(self.load_patch.stop)
         self.addCleanup(self.generate_patch.stop)
+        self.qwen_load_patch = mock.patch.object(
+            recipe_app, 'load_qwen_resources',
+            return_value=(object(), object(), threading.Lock()),
+        )
+        self.qwen_generate_patch = mock.patch(
+            'qwen_recipe.generate_qwen_recipe', return_value=self.recipe,
+        )
+        self.qwen_load = self.qwen_load_patch.start()
+        self.qwen_generate = self.qwen_generate_patch.start()
+        self.addCleanup(self.qwen_load_patch.stop)
+        self.addCleanup(self.qwen_generate_patch.stop)
         self.addCleanup(st.cache_resource.clear)
         self.gpt2_recipe = dict(self.recipe, title='tomato basil pasta')
         patches = [
@@ -54,9 +67,12 @@ class RecipeAppTests(unittest.TestCase):
         for patch in patches:
             self.addCleanup(patch.stop)
 
-    def open_app(self):
+    def open_app(self, model=recipe_app.MINICHEF):
         app = AppTest.from_file(str(APP), default_timeout=10).run()
         self.assertFalse(app.exception)
+        if model:
+            app.radio[0].set_value(model).run()
+            self.assertFalse(app.exception)
         return app
 
     def click(self, app, label):
@@ -71,6 +87,32 @@ class RecipeAppTests(unittest.TestCase):
         self.assertIn('Add at least one ingredient', app.warning[0].value)
         self.load_model.assert_not_called()
         self.generate_recipe.assert_not_called()
+        self.qwen_generate.assert_not_called()
+
+    def test_qwen_option_generates_without_the_legacy_checkpoint(self):
+        app = self.open_app(model=recipe_app.QWEN)
+        app.text_area[0].input('carrot, water')
+        self.click(app, 'Generate recipe')
+        self.qwen_load.assert_called_once()
+        self.qwen_generate.assert_called_once()
+        self.assertEqual(self.qwen_generate.call_args.args[2], ['carrot', 'water'])
+
+    def test_fine_tuned_qwen_loads_its_recorded_base_model(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            adapter = Path(temporary)
+            (adapter / 'minichef_adapter.json').write_text(
+                '{"model_id": "Qwen/Qwen2.5-0.5B-Instruct"}', encoding='utf-8',
+            )
+            (adapter / 'adapter_config.json').write_text('{}', encoding='utf-8')
+            with mock.patch.object(recipe_app, 'QWEN_ADAPTER', adapter):
+                app = self.open_app(model=recipe_app.QWEN_FINETUNED)
+                app.text_area[0].input('carrot, water')
+                self.click(app, 'Generate recipe')
+        self.qwen_load.assert_called_once()
+        self.assertEqual(self.qwen_load.call_args.args[:2], (
+            'Qwen/Qwen2.5-0.5B-Instruct', str(adapter),
+        ))
+        self.qwen_generate.assert_called_once()
 
     def test_commas_lines_and_duplicate_names_reach_model_as_one_list(self):
         app = self.open_app()
@@ -112,8 +154,9 @@ class RecipeAppTests(unittest.TestCase):
         with mock.patch.object(Path, 'is_file', autospec=True,
                                side_effect=lambda path: False if path.name == 'minichefgpt_best.pt' else original(path)):
             app = self.open_app()
-        self.assertIn('recipe model is missing', app.error[0].value)
-        self.assertEqual(len(app.text_area), 0)
+        self.assertIn('MiniChefGPT checkpoint is missing', app.info[0].value)
+        submit = next(button for button in app.button if button.label == 'Generate recipe')
+        self.assertTrue(submit.disabled)
         self.load_model.assert_not_called()
         self.generate_recipe.assert_not_called()
 
@@ -169,10 +212,11 @@ class RecipeAppTests(unittest.TestCase):
         self.assertIn('fine-tuned Qwen3 model is not available', app.info[0].value)
         self.assertTrue(next(b for b in app.button if b.label == 'Generate recipe').disabled)
 
-    def test_offers_the_three_models_without_comparison_or_benchmark_sections(self):
+    def test_offers_all_models_without_comparison_or_benchmark_sections(self):
         app = self.open_app()
         self.assertEqual(list(app.radio[0].options),
-                         ['MiniChefGPT', 'GPT-2 fine-tuned', 'Qwen3 fine-tuned'])
+                         ['MiniChefGPT', 'GPT-2 fine-tuned', 'Qwen3 fine-tuned',
+                          'Qwen2.5-1.5B-Instruct (local)', 'Qwen recipe fine-tune (local)'])
         app.text_area[0].input('pasta, basil')
         self.click(app, 'Generate recipe')
         headings = [heading.value for heading in app.subheader]

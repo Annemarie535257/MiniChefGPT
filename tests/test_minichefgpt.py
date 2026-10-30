@@ -41,6 +41,15 @@ class MiniChefGPTTests(unittest.TestCase):
     def new_model(self):
         return chef.MiniChefGPT(self.config, self.tokenizer.get_vocab_size())
 
+    def test_gpt2_profile_is_a_compact_from_scratch_configuration(self):
+        config = chef.configure_gpt2_profile(chef.Config())
+        self.assertEqual(config.context_length, 512)
+        self.assertEqual(config.d_model, 256)
+        self.assertEqual(config.num_heads, 8)
+        self.assertEqual(config.num_layers, 6)
+        self.assertEqual(config.d_ff, 4 * config.d_model)
+        self.assertEqual(config.batch_size, 8)
+
     def test_attention_and_model_do_not_read_future_tokens(self):
         attention = chef.CausalAttention(16, 4, dropout=0.0).eval()
         hidden = torch.randn(2, 12, 16)

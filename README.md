@@ -69,9 +69,30 @@ python minichefgpt.py --gpu-profile --minutes 0 --steps 30000
 
 `--minutes 0` disables the time limit. The GPU profile saves separately under `models/gpu/`. `--output-dir` chooses another directory. Larger models and longer runs are options to evaluate; they do not guarantee better recipes.
 
+For a larger GPT-2-inspired model trained from random initialization, use the compact six-layer profile:
+
+```powershell
+python minichefgpt.py --gpt2-profile --minutes 30 --steps 12000
+```
+
+This profile uses 256-wide embeddings, 8 attention heads, a 4x feed-forward layer, and a 512-token context. It is about 6 million parameters, not the 124-million-parameter GPT-2 Small, and it does not load pretrained GPT-2 weights. It saves separately under `models/gpt2/`; add `--minutes 0` to disable the time limit. A larger architecture trained from scratch may still perform worse on this relatively small recipe dataset, so compare held-out loss and inspect generated recipes before replacing the deployed checkpoint.
+
 ## Streamlit interface
 
-The deployment entry point is `streamlit_app.py`; it starts the interface defined in `app.py`. The interface loads `models/refactored/minichefgpt_best.pt`, accepts ingredients separated by commas or new lines, displays the generated title and steps, and downloads the recipe as text. Example buttons fill in chicken or pasta ingredients. A **Model** choice switches between MiniChefGPT and the fine-tuned GPT-2 model (see below); GPT-2 ranks 4 drafts per request instead of 8 because each draft is slower. The app caches each CPU model and serializes inference across sessions. It does not train or load the recipe dataset.
+The deployment entry point is `streamlit_app.py`; it starts the interface defined in `app.py`. The app offers MiniChefGPT, fine-tuned GPT-2, Qwen2.5-1.5B-Instruct, and a Qwen LoRA fine-tune. It accepts ingredients separated by commas or new lines, displays the generated title and steps, and downloads the recipe as text. Models are loaded only when selected for generation, cached, and protected by a lock for inference across sessions.
+
+The pretrained Qwen option downloads model files from Hugging Face on first use (several GB of storage). CPU inference requires substantial RAM and can be slow; CUDA is used automatically when available. The fine-tuned Qwen option uses the adapter produced by the workflow below and loads its recorded base model. No API key is required.
+
+### Fine-tune Qwen on the recipe data
+
+The project includes a LoRA supervised fine-tuning script. It uses the cleaned local recipe JSONL, keeps matching recipe titles together in a deterministic train/validation split, and trains only small adapter weights. The default fine-tuning base is Qwen2.5-0.5B-Instruct to reduce memory use; the saved adapter records its base model so the app loads the matching model. Install dependencies, then run:
+
+```powershell
+python -m pip install -r requirements.txt
+python qwen_finetune.py
+```
+
+The first run downloads the selected base model. By default, training runs one epoch and saves the best validation adapter under `models/qwen-recipe-lora/`. After training, select **Qwen recipe fine-tune (local)** in the app. For a short smoke run, add `--max-train-recipes 100 --max-validation-recipes 20`. Use `--model-id Qwen/Qwen2.5-1.5B-Instruct` only on a machine with enough memory/compute. Fine-tuning on CPU can take a long time; a supported CUDA GPU is recommended.
 
 Run locally after installing `requirements.txt`:
 
@@ -83,10 +104,11 @@ For [Streamlit Community Cloud](https://docs.streamlit.io/deploy/streamlit-commu
 
 - `streamlit_app.py`
 - `app.py`
+- `qwen_recipe.py`
 - `minichefgpt.py`
 - `requirements.txt`
 - `.streamlit/config.toml`
-- `models/refactored/minichefgpt_best.pt`
+- `models/refactored/minichefgpt_best.pt` (only needed for the MiniChefGPT baseline)
 
 Use Python 3.11 to match the tested environment. The best checkpoint is about 4.2 MiB and is allowed through `.gitignore`; include it in the repository before deployment. The latest training checkpoint, raw dataset, notebook, local environments, and result JSON files are not needed for inference deployment. No API key is required. This prepares the app for deployment; it does not publish the app.
 
@@ -117,6 +139,8 @@ Decoding uses temperature, top-k/top-p sampling, a sign-aware repetition penalty
 
 - `MiniChefGPT_combined.ipynb`: self-contained notebook, with recorded outputs.
 - `minichefgpt.py`: reusable model, data, training, and generation code.
+- `qwen_recipe.py`: local Qwen loading and recipe generation.
+- `qwen_finetune.py`: LoRA fine-tuning on the cleaned recipe dataset.
 - `build_notebook.py`: builds and executes the notebook from the same source.
 - `models/refactored/minichefgpt_best.pt`: best validation checkpoint, including weights, tokenizer, configuration, and split manifest.
 - `models/refactored/minichefgpt_last.pt`: resumable training state.
