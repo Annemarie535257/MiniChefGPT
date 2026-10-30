@@ -1,0 +1,7 @@
+split,variant,cases,mean_coverage,mean_repeated_pairs,mean_steps,mean_refinement_seconds
+custom,GPT-2,4,1.0,0.0,8.0,
+custom,GPT-2 + Qwen,4,0.8125,0.0,6.75,18.10917537500427
+custom,GPT-2 + Qwen + RAG,4,0.375,0.0,3.5,18.92394607499955
+heldout,GPT-2,12,0.53825,0.0,8.166666666666666,
+heldout,GPT-2 + Qwen,12,0.1845,0.0,4.75,21.419454766662966
+heldout,GPT-2 + Qwen + RAG,12,0.20558333333333334,0.0,2.6666666666666665,18.87153800833039

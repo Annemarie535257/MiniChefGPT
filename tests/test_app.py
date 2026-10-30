@@ -8,8 +8,10 @@ from unittest import mock
 
 import app as recipe_app
 import gpt2_recipes
+import qwen3_recipes
 import minichefgpt as chef
 import streamlit as st
+import torch
 from streamlit.testing.v1 import AppTest
 
 
@@ -50,6 +52,18 @@ class RecipeAppTests(unittest.TestCase):
             mock.patch.object(gpt2_recipes, 'generate_gpt2_recipe', return_value=self.gpt2_recipe),
         ]
         self.gpt2_source, self.load_gpt2, self.generate_gpt2 = [patch.start() for patch in patches]
+        self.qwen3_recipe = dict(self.recipe, title='basil tomato spaghetti', ingredient_coverage=0.75)
+        qwen3_patches = [
+            mock.patch.object(recipe_app, 'qwen3_source', return_value='fine-tuned-qwen3'),
+            mock.patch.object(qwen3_recipes, 'load_qwen3', return_value=(object(), object())),
+            mock.patch.object(qwen3_recipes, 'generate_qwen3_recipe', return_value=self.qwen3_recipe),
+        ]
+        self.qwen3_source, self.load_qwen3, self.generate_qwen3 = [patch.start() for patch in qwen3_patches]
+        patches += qwen3_patches
+        # Pretend to be a large machine unless a test says otherwise.
+        memory_patch = mock.patch.object(recipe_app, 'memory_limit_gb', return_value=None)
+        self.memory = memory_patch.start()
+        patches.append(memory_patch)
         for patch in patches:
             self.addCleanup(patch.stop)
 
@@ -178,6 +192,105 @@ class RecipeAppTests(unittest.TestCase):
         self.assertTrue(submit.disabled)
         self.load_gpt2.assert_not_called()
 
+    def test_qwen3_choice_uses_adapter_model(self):
+        app = self.open_app()
+        app.radio[0].set_value('Qwen3 fine-tuned').run()
+        app.text_area[0].input('pasta, tomato, garlic, basil')
+        self.click(app, 'Generate recipe')
+        self.generate_qwen3.assert_called_once()
+        self.assertEqual(self.generate_qwen3.call_args.args[2], ['pasta', 'tomato', 'garlic', 'basil'])
+        self.load_qwen3.assert_called_once_with('fine-tuned-qwen3', device='cpu', dtype=None)
+        self.generate_recipe.assert_not_called()
+        self.generate_gpt2.assert_not_called()
+        self.assertIn('Basil tomato spaghetti', [heading.value for heading in app.subheader])
+        self.assertTrue(any('Ingredients mentioned in steps: 75%' in caption.value for caption in app.caption))
+
+    def test_missing_qwen3_model_disables_generation(self):
+        self.qwen3_source.return_value = None
+        app = self.open_app()
+        app.radio[0].set_value('Qwen3 fine-tuned').run()
+        self.assertIn('fine-tuned Qwen3 model is not available', app.info[0].value)
+        self.assertTrue(next(b for b in app.button if b.label == 'Generate recipe').disabled)
+
+    def test_offers_all_models_without_comparison_or_benchmark_sections(self):
+        app = self.open_app()
+        self.assertEqual(list(app.radio[0].options),
+                         ['MiniChefGPT', 'GPT-2 fine-tuned', 'Qwen3 fine-tuned',
+                          'Qwen2.5-1.5B-Instruct (local)', 'Qwen recipe fine-tune (local)'])
+        app.text_area[0].input('pasta, basil')
+        self.click(app, 'Generate recipe')
+        headings = [heading.value for heading in app.subheader]
+        self.assertNotIn('How the models perform', headings)
+        self.assertNotIn('Model comparison', headings)
+        self.assertEqual(len(app.dataframe), 0)
+
+    def test_small_server_loads_qwen3_in_16_bit_and_keeps_one_large_model(self):
+        self.memory.return_value = 2.7  # about Streamlit Community Cloud's limit
+        app = self.open_app()
+
+        def generate_with(model_name):
+            app.radio[0].set_value(model_name).run()
+            app.text_area[0].input('pasta, basil')
+            self.click(app, 'Generate recipe')
+
+        generate_with('GPT-2 fine-tuned')
+        generate_with('Qwen3 fine-tuned')
+        self.load_qwen3.assert_called_once_with('fine-tuned-qwen3', device='cpu', dtype=torch.bfloat16)
+        generate_with('GPT-2 fine-tuned')
+        # GPT-2 was unloaded to make room for Qwen3, so it loads again.
+        self.assertEqual(self.load_gpt2.call_count, 2)
+
+
+class Qwen3MemoryGateTests(unittest.TestCase):
+    """Qwen3 adapts to the server's memory and falls back to the Hugging Face copy."""
+
+    def setUp(self):
+        self.folder = mock.MagicMock()
+        self.folder.__truediv__.return_value.is_file.return_value = True
+        self.folder.__truediv__.return_value.stat.return_value.st_size = 40_000_000
+        self.folder.__str__.return_value = 'models/qwen3/adapter'
+        for patch in (mock.patch.object(recipe_app, 'QWEN3_DIR', self.folder),
+                      mock.patch.object(recipe_app, 'QWEN3_ADAPTER', '')):
+            patch.start()
+            self.addCleanup(patch.stop)
+
+    def check(self, setting, memory):
+        with mock.patch.object(recipe_app, 'QWEN3_SETTING', setting),                 mock.patch.object(recipe_app, 'memory_limit_gb', return_value=memory):
+            return recipe_app.qwen3_source(), recipe_app.missing_message('Qwen3 fine-tuned'), recipe_app.low_memory()
+
+    def test_streamlit_cloud_sized_server_keeps_qwen3_in_low_memory_mode(self):
+        source, _, low = self.check('auto', 2.7)
+        self.assertEqual(source, 'models/qwen3/adapter')
+        self.assertTrue(low)
+
+    def test_very_small_server_turns_qwen3_off_with_explanation(self):
+        source, message, _ = self.check('auto', 1.0)
+        self.assertIsNone(source)
+        self.assertIn('this server has 1.0 GB', message)
+
+    def test_large_or_unknown_memory_uses_full_precision(self):
+        for memory in (15.6, None):
+            source, _, low = self.check('auto', memory)
+            self.assertEqual(source, 'models/qwen3/adapter')
+            self.assertFalse(low)
+
+    def test_settings_override_the_memory_check(self):
+        self.assertEqual(self.check('on', 1.0)[0], 'models/qwen3/adapter')
+        source, message, _ = self.check('off', 64.0)
+        self.assertIsNone(source)
+        self.assertIn('turned off', message)
+
+    def test_missing_local_folder_or_lfs_pointer_uses_hugging_face(self):
+        self.folder.__truediv__.return_value.stat.return_value.st_size = 130  # a Git LFS pointer file
+        self.assertEqual(self.check('auto', 2.7)[0], 'Annemarie535257/qwen_model')
+        self.folder.__truediv__.return_value.is_file.return_value = False
+        self.assertEqual(self.check('auto', None)[0], 'Annemarie535257/qwen_model')
+
+    def test_gpt2_falls_back_to_hugging_face(self):
+        missing = mock.MagicMock()
+        missing.__truediv__.return_value.is_file.return_value = False
+        with mock.patch.object(recipe_app, 'GPT2_DIR', missing), mock.patch.object(recipe_app, 'GPT2_MODEL', ''):
+            self.assertEqual(recipe_app.gpt2_source(), 'Annemarie535257/minichef-gpt2')
 
 if __name__ == '__main__':
     unittest.main()

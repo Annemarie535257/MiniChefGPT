@@ -1,0 +1,8 @@
+{
+  "steps": 28,
+  "recipes_seen": 224,
+  "stop_reason": "time_budget",
+  "elapsed_seconds": 4099.702999999994,
+  "best_validation_subset_loss": 1.925627001473991,
+  "mode": "LoRA (32-bit base on CPU)"
+}

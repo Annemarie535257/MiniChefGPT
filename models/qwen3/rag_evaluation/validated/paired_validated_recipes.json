@@ -1,0 +1,1328 @@
+[
+  {
+    "case": "Chicken dinner",
+    "split": "custom",
+    "ingredients": [
+      "chicken",
+      "garlic",
+      "onion",
+      "tomato"
+    ],
+    "retrieved_sources": [
+      {
+        "id": "8183",
+        "title": "marie's roast chicken"
+      },
+      {
+        "id": "5250",
+        "title": "green beans in tomato salsa"
+      },
+      {
+        "id": "9331",
+        "title": "crock pot chicken cacciatore"
+      }
+    ],
+    "variants": {
+      "GPT-2 original": {
+        "recipe": "Title: chicken bbq\nSteps:\n1. mix chicken, garlic, and onion in a large saucepan.\n2. simmer for 5 minutes.\n3. remove from heat and simmer for 1 hour.\n4. add tomato and chicken mixture.\n5. reduce heat and simmer for 5 minutes or until sauce thickens.\n6. add chicken mixture and simmer for 1 minute more.\n7. add tomato and cook for another minute.\n8. remove from heat.\n9. stir in chicken mixture and simmer until chicken is tender.\n10. serve with rice, noodles, and rice.",
+        "audit": {
+          "requested_ingredients": [
+            "chicken",
+            "garlic",
+            "onion",
+            "tomato"
+          ],
+          "detected_food_terms": [
+            "chicken",
+            "garlic",
+            "onion",
+            "rice",
+            "tomato"
+          ],
+          "flagged_extra_ingredients": [
+            "rice"
+          ],
+          "extra_count": 1,
+          "ingredient_coverage": 1.0,
+          "near_duplicate_pairs": 0,
+          "validator_pass": false,
+          "requires_manual_review": true
+        },
+        "status": "original_unvalidated"
+      },
+      "GPT-2 + Qwen validated": {
+        "recipe": "title: chicken bbj\nsteps:\n1. combine chicken, garlic and onion in large saucepan and simmer over medium high heat for 5 mins.\n2. remove from pan and cover with lid and let simmer on low heat for 1 hr.\n3. add tomato paste and simmer for about 15 min.\n4. stir in remaining chicken mixture and continue simmering for 1 min.\n5. add tomato again and simmer for another 1 min.",
+        "audit": {
+          "requested_ingredients": [
+            "chicken",
+            "garlic",
+            "onion",
+            "tomato"
+          ],
+          "detected_food_terms": [
+            "chicken",
+            "garlic",
+            "onion",
+            "tomato paste"
+          ],
+          "flagged_extra_ingredients": [],
+          "extra_count": 0,
+          "ingredient_coverage": 1.0,
+          "near_duplicate_pairs": 0,
+          "validator_pass": true,
+          "requires_manual_review": true
+        },
+        "status": "heuristic_pass_manual_review_needed"
+      },
+      "GPT-2 + Qwen + RAG validated": {
+        "recipe": "Title: chicken-roasted vegetables\nSteps: \n1. combine carrot, celery, and onion and tomato into a large bowl; mix well.\n2. spoon mixture onto a baking sheet coated with nonstick spray.\n3. cover with aluminum foil and bake for 65 minutes.\n4. remove from the oven and let rest briefly before serving.",
+        "audit": {
+          "requested_ingredients": [
+            "chicken",
+            "garlic",
+            "onion",
+            "tomato"
+          ],
+          "detected_food_terms": [
+            "carrot",
+            "celery",
+            "chicken",
+            "onion",
+            "tomato"
+          ],
+          "flagged_extra_ingredients": [
+            "carrot",
+            "celery"
+          ],
+          "extra_count": 2,
+          "ingredient_coverage": 0.5,
+          "near_duplicate_pairs": 0,
+          "validator_pass": false,
+          "requires_manual_review": true
+        },
+        "status": "flagged_requires_review"
+      }
+    }
+  },
+  {
+    "case": "Vegetable pasta",
+    "split": "custom",
+    "ingredients": [
+      "pasta",
+      "tomato",
+      "garlic",
+      "basil"
+    ],
+    "retrieved_sources": [
+      {
+        "id": "1620",
+        "title": "stuffed mushrooms"
+      },
+      {
+        "id": "4928",
+        "title": "tomato pesto & chicken pasta"
+      },
+      {
+        "id": "5980",
+        "title": "baked italian chicken"
+      }
+    ],
+    "variants": {
+      "GPT-2 original": {
+        "recipe": "Title: pasta with tomato\nSteps:\n1. heat oven to 400°f.\n2. mix pasta with tomato.\n3. cook, stirring occasionally, for 2 minutes.\n4. add basil.\n5. cook, stirring frequently, for 1 minute.\n6. add garlic and basil.\n7. cook, stirring often, for 1 minute more.\n8. add remaining ingredients and cook for 1 minute more or until tomatoes are tender.\n9. add pasta to the pasta mixture and stir to combine.\n10. remove from heat and stir in tomatoes.\n11. sprinkle with basil.\n12. bake uncovered for 5 minutes.",
+        "audit": {
+          "requested_ingredients": [
+            "pasta",
+            "tomato",
+            "garlic",
+            "basil"
+          ],
+          "detected_food_terms": [
+            "basil",
+            "garlic",
+            "pasta",
+            "tomato"
+          ],
+          "flagged_extra_ingredients": [],
+          "extra_count": 0,
+          "ingredient_coverage": 1.0,
+          "near_duplicate_pairs": 0,
+          "validator_pass": true,
+          "requires_manual_review": true
+        },
+        "status": "original_unvalidated"
+      },
+      "GPT-2 + Qwen validated": {
+        "recipe": "Title: pasta and tomato\nSteps: \n1. heat water in a large saucepan until it's just about boiling.\n2. bring together pasta and tomato juice and mix well.\n3. cover and cook on low heat for 1 minute.\n4. remove from heat and stir in remaining tomatoes and garlic.\n7. simmer for another 10 seconds.\n8. serve hot.",
+        "audit": {
+          "requested_ingredients": [
+            "pasta",
+            "tomato",
+            "garlic",
+            "basil"
+          ],
+          "detected_food_terms": [
+            "garlic",
+            "pasta",
+            "tomato juice"
+          ],
+          "flagged_extra_ingredients": [],
+          "extra_count": 0,
+          "ingredient_coverage": 0.75,
+          "near_duplicate_pairs": 0,
+          "validator_pass": false,
+          "requires_manual_review": true
+        },
+        "status": "flagged_requires_review"
+      },
+      "GPT-2 + Qwen + RAG validated": {
+        "recipe": "Title: stuffed pasta (recipe modified from training recipe id 1610)\nSteps:\npreheat the oven to medium.\ndrain the pasta and set aside.\ncombine the tomato paste, chopped garlic and basil into a large bowl.\ndissolving the tomato paste into hot water.\ncover and simmer for 15 minutes.\nrepeat with the remaining ingredients.",
+        "audit": {
+          "requested_ingredients": [
+            "pasta",
+            "tomato",
+            "garlic",
+            "basil"
+          ],
+          "detected_food_terms": [
+            "basil",
+            "garlic",
+            "pasta",
+            "tomato paste"
+          ],
+          "flagged_extra_ingredients": [],
+          "extra_count": 0,
+          "ingredient_coverage": 0.0,
+          "near_duplicate_pairs": 0,
+          "validator_pass": false,
+          "requires_manual_review": true
+        },
+        "status": "flagged_requires_review"
+      }
+    }
+  },
+  {
+    "case": "Cheese omelet",
+    "split": "custom",
+    "ingredients": [
+      "eggs",
+      "cheese",
+      "onion",
+      "spinach"
+    ],
+    "retrieved_sources": [
+      {
+        "id": "7139",
+        "title": "addicting broccoli casserole"
+      },
+      {
+        "id": "1883",
+        "title": "cheese omelette"
+      },
+      {
+        "id": "667",
+        "title": "spinach quiche"
+      }
+    ],
+    "variants": {
+      "GPT-2 original": {
+        "recipe": "Title: spinach and spinach salad\nSteps:\n1. mix together eggs and cheese in a bowl.\n2. mix spinach, onion and spinach in a large mixing bowl.\n3. stir in spinach, onion and tomatoes.\n4. sprinkle with remaining cheese.\n5. place in oven at 350 degrees for 30-40 minutes.\n6. cool completely before serving.",
+        "audit": {
+          "requested_ingredients": [
+            "eggs",
+            "cheese",
+            "onion",
+            "spinach"
+          ],
+          "detected_food_terms": [
+            "cheese",
+            "egg",
+            "onion",
+            "spinach",
+            "tomato"
+          ],
+          "flagged_extra_ingredients": [
+            "tomato"
+          ],
+          "extra_count": 1,
+          "ingredient_coverage": 1.0,
+          "near_duplicate_pairs": 0,
+          "validator_pass": false,
+          "requires_manual_review": true
+        },
+        "status": "original_unvalidated"
+      },
+      "GPT-2 + Qwen validated": {
+        "recipe": "Title: spinach salad\nSteps:\n1. combine egg mixture and spinach in large bowl.\n2. spoon onto greated baking sheet.\n3. bake at 375 degrees f for 30 minutes.\n4. serve immediately.",
+        "audit": {
+          "requested_ingredients": [
+            "eggs",
+            "cheese",
+            "onion",
+            "spinach"
+          ],
+          "detected_food_terms": [
+            "egg",
+            "spinach"
+          ],
+          "flagged_extra_ingredients": [],
+          "extra_count": 0,
+          "ingredient_coverage": 0.5,
+          "near_duplicate_pairs": 0,
+          "validator_pass": false,
+          "requires_manual_review": true
+        },
+        "status": "flagged_requires_review"
+      },
+      "GPT-2 + Qwen + RAG validated": {
+        "recipe": "Title: spinach salad\nsteps:\n1. prepare spinach by boiling or steamed in water.\n2. cut spinach into small pieces.\n3. in a large bowl, mix together eggs, cheese and onion.\n4. add spinach and stir well.\n5. spoon salad onto plates.\n6. serve immediately.",
+        "audit": {
+          "requested_ingredients": [
+            "eggs",
+            "cheese",
+            "onion",
+            "spinach"
+          ],
+          "detected_food_terms": [
+            "cheese",
+            "egg",
+            "onion",
+            "spinach"
+          ],
+          "flagged_extra_ingredients": [],
+          "extra_count": 0,
+          "ingredient_coverage": 1.0,
+          "near_duplicate_pairs": 0,
+          "validator_pass": true,
+          "requires_manual_review": true
+        },
+        "status": "heuristic_pass_manual_review_needed"
+      }
+    }
+  },
+  {
+    "case": "Roasted vegetables",
+    "split": "custom",
+    "ingredients": [
+      "potatoes",
+      "carrots",
+      "olive oil",
+      "rosemary"
+    ],
+    "retrieved_sources": [
+      {
+        "id": "5035",
+        "title": "special roasted veggies!"
+      },
+      {
+        "id": "2983",
+        "title": "roasted chicken with peppers"
+      },
+      {
+        "id": "5732",
+        "title": "roasted garlic potatoes"
+      }
+    ],
+    "variants": {
+      "GPT-2 original": {
+        "recipe": "Title: potato fries\nSteps:\n1. combine potatoes, carrots and olive oil in a large bowl.\n2. combine rosemary, potatoes and onion.\n3. pour over potato fries.\n4. cover and refrigerate for at least 24 hours.",
+        "audit": {
+          "requested_ingredients": [
+            "potatoes",
+            "carrots",
+            "olive oil",
+            "rosemary"
+          ],
+          "detected_food_terms": [
+            "carrot",
+            "olive oil",
+            "onion",
+            "potato",
+            "rosemary"
+          ],
+          "flagged_extra_ingredients": [
+            "onion"
+          ],
+          "extra_count": 1,
+          "ingredient_coverage": 1.0,
+          "near_duplicate_pairs": 0,
+          "validator_pass": false,
+          "requires_manual_review": true
+        },
+        "status": "original_unvalidated"
+      },
+      "GPT-2 + Qwen validated": {
+        "recipe": "Title: potato carrot salad\nSteps:\n2. combine potatoes and carrots in a large bowl.\n3. mix together remaining ingredients.\n4. pour into bowl.\n5. cover and bring to a boil.\n6. simmer for 2 hours.\n7. remove from heat and serve.",
+        "audit": {
+          "requested_ingredients": [
+            "potatoes",
+            "carrots",
+            "olive oil",
+            "rosemary"
+          ],
+          "detected_food_terms": [
+            "carrot",
+            "potato"
+          ],
+          "flagged_extra_ingredients": [],
+          "extra_count": 0,
+          "ingredient_coverage": 0.5,
+          "near_duplicate_pairs": 0,
+          "validator_pass": false,
+          "requires_manual_review": true
+        },
+        "status": "flagged_requires_review"
+      },
+      "GPT-2 + Qwen + RAG validated": {
+        "recipe": "Title: potato carrots roasted vegetables\nsteps:\n1. heat oven to 350 degrees f and place potatoes on a baking sheet.\n2. drizzle with oil and season with salt and pepper.\n3. bake for 1 hour or until potatoes are tender.\n4. remove from oven and let cool slightly before slicing.\n5. arrange slices of carrot and potato on a serving plate.\n6. top with chopped herbs and serve.",
+        "audit": {
+          "requested_ingredients": [
+            "potatoes",
+            "carrots",
+            "olive oil",
+            "rosemary"
+          ],
+          "detected_food_terms": [
+            "carrot",
+            "herbs",
+            "oil",
+            "pepper",
+            "potato",
+            "salt"
+          ],
+          "flagged_extra_ingredients": [
+            "herbs",
+            "pepper",
+            "salt"
+          ],
+          "extra_count": 3,
+          "ingredient_coverage": 0.5,
+          "near_duplicate_pairs": 0,
+          "validator_pass": false,
+          "requires_manual_review": true
+        },
+        "status": "flagged_requires_review"
+      }
+    }
+  },
+  {
+    "case": "2303",
+    "split": "heldout",
+    "ingredients": [
+      "potatoes",
+      "onion",
+      "bacon",
+      "butter",
+      "cayenne"
+    ],
+    "retrieved_sources": [
+      {
+        "id": "5616",
+        "title": "cream of mushroom scalloped potatoes"
+      },
+      {
+        "id": "5081",
+        "title": "twice baked ranch potatoes"
+      },
+      {
+        "id": "4991",
+        "title": "twice baked caesar potatoes"
+      }
+    ],
+    "variants": {
+      "GPT-2 original": {
+        "recipe": "Title: bacon and bacon salad\nSteps:\n1. preheat oven to 400°f.\n2. combine potatoes, onion, potatoes, bacon, butter and cayenne.\n3. mix well.\n4. place in a 2-quart skillet and cook until potatoes are tender.\n5. stir in butter and cay.\n6. toss with remaining bacon.\n7. bake at 350°f for about 10 minutes.\n8. cool completely before serving.",
+        "audit": {
+          "requested_ingredients": [
+            "potatoes",
+            "onion",
+            "bacon",
+            "butter",
+            "cayenne"
+          ],
+          "detected_food_terms": [
+            "bacon",
+            "butter",
+            "cayenne",
+            "onion",
+            "potato"
+          ],
+          "flagged_extra_ingredients": [],
+          "extra_count": 0,
+          "ingredient_coverage": 1.0,
+          "near_duplicate_pairs": 0,
+          "validator_pass": true,
+          "requires_manual_review": true
+        },
+        "status": "original_unvalidated"
+      },
+      "GPT-2 + Qwen validated": {
+        "recipe": "title: bacon potato salad\nsteps:\n1. heat up bacon in a large skillet over medium-high heat until crispy.\n2. drain off any excess fat.\n3. combine all ingredients in a bowl and mix thoroughly.\n4. cover the skillet with plastic and steam for 10-12 minutes.\n5. drain before serving.",
+        "audit": {
+          "requested_ingredients": [
+            "potatoes",
+            "onion",
+            "bacon",
+            "butter",
+            "cayenne"
+          ],
+          "detected_food_terms": [
+            "bacon",
+            "potato"
+          ],
+          "flagged_extra_ingredients": [],
+          "extra_count": 0,
+          "ingredient_coverage": 0.2,
+          "near_duplicate_pairs": 0,
+          "validator_pass": false,
+          "requires_manual_review": true
+        },
+        "status": "flagged_requires_review"
+      },
+      "GPT-2 + Qwen + RAG validated": {
+        "recipe": "title: bacon and potatoes\nsteps:\nheat butter in large pan.\nsaute onion and bacon.\ncombine with potatoes and stir to coat.\ncover and bake at 407°F for 1 hour.\nuncover and bake for 10 minutes longer.\nremove from oven.\nserve.",
+        "audit": {
+          "requested_ingredients": [
+            "potatoes",
+            "onion",
+            "bacon",
+            "butter",
+            "cayenne"
+          ],
+          "detected_food_terms": [
+            "bacon",
+            "butter",
+            "onion",
+            "potato"
+          ],
+          "flagged_extra_ingredients": [],
+          "extra_count": 0,
+          "ingredient_coverage": 0.0,
+          "near_duplicate_pairs": 0,
+          "validator_pass": false,
+          "requires_manual_review": true
+        },
+        "status": "flagged_requires_review"
+      }
+    }
+  },
+  {
+    "case": "5418",
+    "split": "heldout",
+    "ingredients": [
+      "potatoes",
+      "onion",
+      "eggs"
+    ],
+    "retrieved_sources": [
+      {
+        "id": "4920",
+        "title": "old-fashion potato pancakes"
+      },
+      {
+        "id": "4799",
+        "title": "mirj's potato kugel"
+      },
+      {
+        "id": "3526",
+        "title": "mom's potato salad"
+      }
+    ],
+    "variants": {
+      "GPT-2 original": {
+        "recipe": "Title: potatoes with egg\nSteps:\n1. in a large pot, combine potatoes, onion and eggs.\n2. add the remaining ingredients and bring to a boil.\n3. reduce heat to medium.\n4. reduce heat to low.\n5. stir in potatoes and onion.\n6. cook for 3-4 minutes.\n7. remove from heat.\n8. drain and set aside.\n9. combine the potatoes, egg and salt in a bowl.\n10. combine the bread crumbs and sugar.\n11. add the potatoes, egg, salt and pepper.\n12. mix well.\n13. cover and cook on low for 2-3 hours.\n14. remove from heat and cool completely.",
+        "audit": {
+          "requested_ingredients": [
+            "potatoes",
+            "onion",
+            "eggs"
+          ],
+          "detected_food_terms": [
+            "bread",
+            "egg",
+            "onion",
+            "pepper",
+            "potato",
+            "salt",
+            "sugar"
+          ],
+          "flagged_extra_ingredients": [
+            "bread",
+            "pepper",
+            "salt",
+            "sugar"
+          ],
+          "extra_count": 4,
+          "ingredient_coverage": 1.0,
+          "near_duplicate_pairs": 0,
+          "validator_pass": false,
+          "requires_manual_review": true
+        },
+        "status": "original_unvalidated"
+      },
+      "GPT-2 + Qwen validated": {
+        "recipe": "title: potato soup\nsteps:\n2. heat the potatoes in a large pan over medium heat until soft.\n3. stir in onions and cook for about 1 minute; then add the eggs and continue cooking for 1-2 minutes.\n4. season with salt and pepper as desired.\n5. cover and bring to a boil; reduce heat to low and simmer for 10-15 minutes.\n6. drain and serve hot.",
+        "audit": {
+          "requested_ingredients": [
+            "potatoes",
+            "onion",
+            "eggs"
+          ],
+          "detected_food_terms": [
+            "egg",
+            "onion",
+            "pepper",
+            "potato",
+            "salt"
+          ],
+          "flagged_extra_ingredients": [
+            "pepper",
+            "salt"
+          ],
+          "extra_count": 2,
+          "ingredient_coverage": 1.0,
+          "near_duplicate_pairs": 0,
+          "validator_pass": false,
+          "requires_manual_review": true
+        },
+        "status": "flagged_requires_review"
+      },
+      "GPT-2 + Qwen + RAG validated": {
+        "recipe": "Title: potatoes and egg\nSteps: \n1. mash potato and onion together;\n2. whip egg yolks;\n3. mix with the mashed mixture and blend;\n4. cook over medium heat until potatoes are tender and mixture thickens;\n5. drain mixture and let rest for one min.;\n6. combine mashed potato mixture, yolk white and salt;\n7. cover and bake at 400f for 15 minutes;\n8. remove mixture and let cool.",
+        "audit": {
+          "requested_ingredients": [
+            "potatoes",
+            "onion",
+            "eggs"
+          ],
+          "detected_food_terms": [
+            "egg",
+            "onion",
+            "potato",
+            "salt"
+          ],
+          "flagged_extra_ingredients": [
+            "salt"
+          ],
+          "extra_count": 1,
+          "ingredient_coverage": 1.0,
+          "near_duplicate_pairs": 0,
+          "validator_pass": false,
+          "requires_manual_review": true
+        },
+        "status": "flagged_requires_review"
+      }
+    }
+  },
+  {
+    "case": "7454",
+    "split": "heldout",
+    "ingredients": [
+      "green bell peppers",
+      "olive oil",
+      "hot italian sausage",
+      "red wine"
+    ],
+    "retrieved_sources": [
+      {
+        "id": "2391",
+        "title": "italian sausage and pepper heroes"
+      },
+      {
+        "id": "4906",
+        "title": "olive garden neapolitan ziti"
+      },
+      {
+        "id": "3192",
+        "title": "chicago style deep-dish pizza"
+      }
+    ],
+    "variants": {
+      "GPT-2 original": {
+        "recipe": "Title: chinese sausage\nSteps:\n1. combine all ingredients in large mixing bowl.\n2. stir in sausage.\n3. add meat mixture and mix well.\n4. add sausage mixture and mix well again.\n5. add hot italian sausage.\n6. pour over the sausage.\n7. sprinkle with chopped onions.\n8. place on greased cookie sheet.\n9. bake in oven for 25 minutes.\n10. cool slightly.",
+        "audit": {
+          "requested_ingredients": [
+            "green bell peppers",
+            "olive oil",
+            "hot italian sausage",
+            "red wine"
+          ],
+          "detected_food_terms": [
+            "hot italian sausage",
+            "onion"
+          ],
+          "flagged_extra_ingredients": [
+            "onion"
+          ],
+          "extra_count": 1,
+          "ingredient_coverage": 0.25,
+          "near_duplicate_pairs": 0,
+          "validator_pass": false,
+          "requires_manual_review": true
+        },
+        "status": "original_unvalidated"
+      },
+      "GPT-2 + Qwen validated": {
+        "recipe": "title: chinese sausage soup\nsteps:\n5. heat olive oil in large skillet.\n6. brown sausages.\n7. drain.\n8. fry garlic in oil until soft.\n9. add onion and simmer.\n10. add remaining oil and cook until thickened.\n11. add noodles and stir.\n12. serve warm.",
+        "audit": {
+          "requested_ingredients": [
+            "green bell peppers",
+            "olive oil",
+            "hot italian sausage",
+            "red wine"
+          ],
+          "detected_food_terms": [
+            "garlic",
+            "olive oil",
+            "onion",
+            "sausage",
+            "sausages"
+          ],
+          "flagged_extra_ingredients": [
+            "garlic",
+            "onion",
+            "sausages"
+          ],
+          "extra_count": 3,
+          "ingredient_coverage": 0.25,
+          "near_duplicate_pairs": 0,
+          "validator_pass": false,
+          "requires_manual_review": true
+        },
+        "status": "flagged_requires_review"
+      },
+      "GPT-2 + Qwen + RAG validated": {
+        "recipe": "title: chinese sauce\nsteps:\n1. combine peppers and sausage in bowl.\n2. stir well.\n3. cover and refrigerated for 1 hr.\n4. while that time saute peppers and saucers in olive oil until soft, 5 min.\n5. add onions and garlic and season with salt & pepper.\n6. continue cooking, stir often, until vegetables browned, about 20 mins.\n7. serve.",
+        "audit": {
+          "requested_ingredients": [
+            "green bell peppers",
+            "olive oil",
+            "hot italian sausage",
+            "red wine"
+          ],
+          "detected_food_terms": [
+            "garlic",
+            "olive oil",
+            "onion",
+            "pepper",
+            "salt",
+            "sausage"
+          ],
+          "flagged_extra_ingredients": [
+            "garlic",
+            "onion",
+            "pepper",
+            "salt"
+          ],
+          "extra_count": 4,
+          "ingredient_coverage": 0.25,
+          "near_duplicate_pairs": 0,
+          "validator_pass": false,
+          "requires_manual_review": true
+        },
+        "status": "flagged_requires_review"
+      }
+    }
+  },
+  {
+    "case": "9362",
+    "split": "heldout",
+    "ingredients": [
+      "cauliflower",
+      "sour cream",
+      "onion",
+      "prepared mustard",
+      "milk",
+      "cheddar cheese"
+    ],
+    "retrieved_sources": [
+      {
+        "id": "6633",
+        "title": "cauliflower casserole"
+      },
+      {
+        "id": "9695",
+        "title": "chili dog casserole"
+      },
+      {
+        "id": "9380",
+        "title": "cope's cauliflower casserole"
+      }
+    ],
+    "variants": {
+      "GPT-2 original": {
+        "recipe": "Title: cauliflower bread\nSteps:\n1. mix together the sour cream, onion and milk.\n2. add to the cauliflower.\n3. toss well.\n4. place in a greased 2 quart casserole dish.\n5. cover with foil and bake at 400 for 40 minutes.",
+        "audit": {
+          "requested_ingredients": [
+            "cauliflower",
+            "sour cream",
+            "onion",
+            "prepared mustard",
+            "milk",
+            "cheddar cheese"
+          ],
+          "detected_food_terms": [
+            "bread",
+            "cauliflower",
+            "milk",
+            "onion",
+            "sour cream"
+          ],
+          "flagged_extra_ingredients": [
+            "bread"
+          ],
+          "extra_count": 1,
+          "ingredient_coverage": 0.667,
+          "near_duplicate_pairs": 0,
+          "validator_pass": false,
+          "requires_manual_review": true
+        },
+        "status": "original_unvalidated"
+      },
+      "GPT-2 + Qwen validated": {
+        "recipe": "Title: cauliflower and mustard bread\nSteps:\n\ncombine the cauliflower and mustard in a large bowl; mix until smooth. pour the mixture into a greased 9x13-inch loaf pan (or a 4x8-inch sheet pan) and bake at 357°f for 30-35 minutes.",
+        "audit": {
+          "requested_ingredients": [
+            "cauliflower",
+            "sour cream",
+            "onion",
+            "prepared mustard",
+            "milk",
+            "cheddar cheese"
+          ],
+          "detected_food_terms": [
+            "bread",
+            "cauliflower",
+            "mustard"
+          ],
+          "flagged_extra_ingredients": [
+            "bread"
+          ],
+          "extra_count": 1,
+          "ingredient_coverage": 0.0,
+          "near_duplicate_pairs": 0,
+          "validator_pass": false,
+          "requires_manual_review": true
+        },
+        "status": "flagged_requires_review"
+      },
+      "GPT-2 + Qwen + RAG validated": {
+        "recipe": "title: cauliflower casseroles\nsteps:\ncombine all the ingredients in a large bowl.\nput the mixture into a 9×7 inch baking pan coated with foil.\ncover the pan with foil and place it in the pre-heated oven.\nbaste the cauliflower as you bake.\nremove from the oven and serve.",
+        "audit": {
+          "requested_ingredients": [
+            "cauliflower",
+            "sour cream",
+            "onion",
+            "prepared mustard",
+            "milk",
+            "cheddar cheese"
+          ],
+          "detected_food_terms": [
+            "cauliflower"
+          ],
+          "flagged_extra_ingredients": [],
+          "extra_count": 0,
+          "ingredient_coverage": 0.0,
+          "near_duplicate_pairs": 0,
+          "validator_pass": false,
+          "requires_manual_review": true
+        },
+        "status": "flagged_requires_review"
+      }
+    }
+  },
+  {
+    "case": "4408",
+    "split": "heldout",
+    "ingredients": [
+      "russet potatoes",
+      "olive oil",
+      "red onion",
+      "mushrooms",
+      "garlic",
+      "fresh lemon juice",
+      "fresh dill",
+      "dried dill",
+      "salt",
+      "black pepper",
+      "nonfat sour cream",
+      "parmesan cheese"
+    ],
+    "retrieved_sources": [
+      {
+        "id": "9538",
+        "title": "carrot dill velvet soup"
+      },
+      {
+        "id": "1293",
+        "title": "mashed garlic & onion potatoes"
+      },
+      {
+        "id": "5114",
+        "title": "garlic chicken pizza"
+      }
+    ],
+    "variants": {
+      "GPT-2 original": {
+        "recipe": "Title: potato salad with sour cream\nSteps:\n1. in a large bowl, combine potatoes, onion, mushrooms and garlic.\n2. mix well.\n3. drain and stir in parmesan cheese.\n4. mix in remaining ingredients.\n5. stir in dill.\n6. sprinkle with parmesan cheese and serve.",
+        "audit": {
+          "requested_ingredients": [
+            "russet potatoes",
+            "olive oil",
+            "red onion",
+            "mushrooms",
+            "garlic",
+            "fresh lemon juice",
+            "fresh dill",
+            "dried dill",
+            "salt",
+            "black pepper",
+            "nonfat sour cream",
+            "parmesan cheese"
+          ],
+          "detected_food_terms": [
+            "dill",
+            "garlic",
+            "mushroom",
+            "onion",
+            "parmesan cheese",
+            "potato",
+            "sour cream"
+          ],
+          "flagged_extra_ingredients": [
+            "potato",
+            "sour cream"
+          ],
+          "extra_count": 2,
+          "ingredient_coverage": 0.25,
+          "near_duplicate_pairs": 0,
+          "validator_pass": false,
+          "requires_manual_review": true
+        },
+        "status": "original_unvalidated"
+      },
+      "GPT-2 + Qwen validated": {
+        "recipe": "title: potato soup\nsteps:\n5. combine all ingredients in large bowl; bring to boil.\n6. cover and simmer 10 minutes.\n7. remove lid and continue to cook until soup is reduced to liquid.\n8. serve hot.",
+        "audit": {
+          "requested_ingredients": [
+            "russet potatoes",
+            "olive oil",
+            "red onion",
+            "mushrooms",
+            "garlic",
+            "fresh lemon juice",
+            "fresh dill",
+            "dried dill",
+            "salt",
+            "black pepper",
+            "nonfat sour cream",
+            "parmesan cheese"
+          ],
+          "detected_food_terms": [
+            "potato"
+          ],
+          "flagged_extra_ingredients": [
+            "potato"
+          ],
+          "extra_count": 1,
+          "ingredient_coverage": 0.0,
+          "near_duplicate_pairs": 0,
+          "validator_pass": false,
+          "requires_manual_review": true
+        },
+        "status": "flagged_requires_review"
+      },
+      "GPT-2 + Qwen + RAG validated": {
+        "recipe": "title: potato salad\nsteps:\n1. combine potatoes, onions, mushrooms and basil in a large mixing bowl.\n2. drain mixture and mix thoroughly.\n3. add sour cream, stir well.\n4. serve chilled.",
+        "audit": {
+          "requested_ingredients": [
+            "russet potatoes",
+            "olive oil",
+            "red onion",
+            "mushrooms",
+            "garlic",
+            "fresh lemon juice",
+            "fresh dill",
+            "dried dill",
+            "salt",
+            "black pepper",
+            "nonfat sour cream",
+            "parmesan cheese"
+          ],
+          "detected_food_terms": [
+            "basil",
+            "mushroom",
+            "onion",
+            "potato",
+            "sour cream"
+          ],
+          "flagged_extra_ingredients": [
+            "basil",
+            "potato",
+            "sour cream"
+          ],
+          "extra_count": 3,
+          "ingredient_coverage": 0.083,
+          "near_duplicate_pairs": 0,
+          "validator_pass": false,
+          "requires_manual_review": true
+        },
+        "status": "flagged_requires_review"
+      }
+    }
+  },
+  {
+    "case": "4557",
+    "split": "heldout",
+    "ingredients": [
+      "potatoes",
+      "onion",
+      "cooked ham",
+      "salt",
+      "dried chile pequins",
+      "eggs",
+      "milk",
+      "salt",
+      "pepper"
+    ],
+    "retrieved_sources": [
+      {
+        "id": "3261",
+        "title": "ham & cheese & onion mashed potatoes"
+      },
+      {
+        "id": "4029",
+        "title": "onion mashed potatoes"
+      },
+      {
+        "id": "9221",
+        "title": "country green beans"
+      }
+    ],
+    "variants": {
+      "GPT-2 original": {
+        "recipe": "Title: ham and potatoes\nSteps:\n1. combine potatoes, onion, bacon, ham, salt, chile pequin and egg.\n2. bring to a boil.\n3. reduce heat and simmer for 20 minutes.\n4. remove from heat and set aside.\n5. mix together potatoes, onion, ham, salt and pepper in a bowl.\n6. stir in eggs, milk, and salt.\n7. mix well.\n8. stir in flour, sugar and salt.\n9. stir in milk and mix well.\n10. add ham and cook for 30 minutes or until thickened and browned.\n11. serve with sour cream or other sour cream.",
+        "audit": {
+          "requested_ingredients": [
+            "potatoes",
+            "onion",
+            "cooked ham",
+            "salt",
+            "dried chile pequins",
+            "eggs",
+            "milk",
+            "salt",
+            "pepper"
+          ],
+          "detected_food_terms": [
+            "bacon",
+            "chile",
+            "egg",
+            "flour",
+            "ham",
+            "milk",
+            "onion",
+            "pepper",
+            "potato",
+            "salt",
+            "sour cream",
+            "sugar"
+          ],
+          "flagged_extra_ingredients": [
+            "bacon",
+            "flour",
+            "sour cream",
+            "sugar"
+          ],
+          "extra_count": 4,
+          "ingredient_coverage": 0.778,
+          "near_duplicate_pairs": 0,
+          "validator_pass": false,
+          "requires_manual_review": true
+        },
+        "status": "original_unvalidated"
+      },
+      "GPT-2 + Qwen validated": {
+        "recipe": "Title: ham & potatoes soup\nSteps: \n1. combine the ingredients in a large bowl; cover and cook over medium heat until the potatoes are tender. do not cover the soup while cooking.\n2. remove the lid after about 1 hour.\n3. drain the potatoes.\n4. stir in carrots and the rest of the ingredients and bring to boil.\n5. reduce heat and simmer for 10 more minutes.\n6. serve hot.",
+        "audit": {
+          "requested_ingredients": [
+            "potatoes",
+            "onion",
+            "cooked ham",
+            "salt",
+            "dried chile pequins",
+            "eggs",
+            "milk",
+            "salt",
+            "pepper"
+          ],
+          "detected_food_terms": [
+            "carrot",
+            "ham",
+            "potato"
+          ],
+          "flagged_extra_ingredients": [
+            "carrot"
+          ],
+          "extra_count": 1,
+          "ingredient_coverage": 0.111,
+          "near_duplicate_pairs": 0,
+          "validator_pass": false,
+          "requires_manual_review": true
+        },
+        "status": "flagged_requires_review"
+      },
+      "GPT-2 + Qwen + RAG validated": {
+        "recipe": "title: ham and potato mashed potatoes (recipe id: 3199)\nsteps:\n1.combine potatoes, onion & ham in a big mixing bowl.\nmix in eggs, salt and pepper. pour into a greated baking sheet.\n2. sprinkle with flour, sugar, salt and mix well.\n3. add ham to mixture and cook on medium heat for 35 minutes or until fully cooked.\n4. serve hot.",
+        "audit": {
+          "requested_ingredients": [
+            "potatoes",
+            "onion",
+            "cooked ham",
+            "salt",
+            "dried chile pequins",
+            "eggs",
+            "milk",
+            "salt",
+            "pepper"
+          ],
+          "detected_food_terms": [
+            "egg",
+            "flour",
+            "ham",
+            "mashed potatoes",
+            "onion",
+            "pepper",
+            "potato",
+            "salt",
+            "sugar"
+          ],
+          "flagged_extra_ingredients": [
+            "flour",
+            "mashed potatoes",
+            "sugar"
+          ],
+          "extra_count": 3,
+          "ingredient_coverage": 0.556,
+          "near_duplicate_pairs": 0,
+          "validator_pass": false,
+          "requires_manual_review": true
+        },
+        "status": "flagged_requires_review"
+      }
+    }
+  },
+  {
+    "case": "3908",
+    "split": "heldout",
+    "ingredients": [
+      "butter",
+      "flour",
+      "garlic",
+      "heavy cream",
+      "butter"
+    ],
+    "retrieved_sources": [
+      {
+        "id": "2792",
+        "title": "emeril's creamed spinach"
+      },
+      {
+        "id": "9573",
+        "title": "easy amish sugar cream pie"
+      },
+      {
+        "id": "9785",
+        "title": "creamy alfredo sauce"
+      }
+    ],
+    "variants": {
+      "GPT-2 original": {
+        "recipe": "Title: blackberry bread\nSteps:\n1. preheat oven to 400 degrees f.\n2. preheat oven racks to 400 degrees f and grease and flour a 12 x 9\\\n3. .\n4. .\n5. .\n6. .\n7. .\n8. .\n9. .",
+        "audit": {
+          "requested_ingredients": [
+            "butter",
+            "flour",
+            "garlic",
+            "heavy cream",
+            "butter"
+          ],
+          "detected_food_terms": [
+            "blackberry",
+            "bread",
+            "flour"
+          ],
+          "flagged_extra_ingredients": [
+            "blackberry",
+            "bread"
+          ],
+          "extra_count": 2,
+          "ingredient_coverage": 0.2,
+          "near_duplicate_pairs": 0,
+          "validator_pass": false,
+          "requires_manual_review": true
+        },
+        "status": "original_unvalidated"
+      },
+      "GPT-2 + Qwen validated": {
+        "recipe": "title: blackberry toast\nsteps:\n1. heat butter in a saucepan; stir in nuts and cover pan and bake at high heat for 5 minutes. remove from heat and let cool slightly.\n2. add milk and whisk until smooth. cover pan with lid and bake at 350 degrees f for 8-10 minutes. let cool.",
+        "audit": {
+          "requested_ingredients": [
+            "butter",
+            "flour",
+            "garlic",
+            "heavy cream",
+            "butter"
+          ],
+          "detected_food_terms": [
+            "blackberry",
+            "butter",
+            "milk"
+          ],
+          "flagged_extra_ingredients": [
+            "blackberry",
+            "milk"
+          ],
+          "extra_count": 2,
+          "ingredient_coverage": 0.4,
+          "near_duplicate_pairs": 0,
+          "validator_pass": false,
+          "requires_manual_review": true
+        },
+        "status": "flagged_requires_review"
+      },
+      "GPT-2 + Qwen + RAG validated": {
+        "recipe": "Title: black berry bread\nSteps: \n1. preheated oven to 275°f and place baking sheet on rack.\n2. in a small bowl, beat together flour, garlic and butter.\n3. roll out dough onto parchment paper.\n4. sprinkle with berries.\n5. spread berries evenly over the dough.\n6. bake for 1 hour, turning occasionally, until golden brown.\n7. let cool for 1 minute before slicing.",
+        "audit": {
+          "requested_ingredients": [
+            "butter",
+            "flour",
+            "garlic",
+            "heavy cream",
+            "butter"
+          ],
+          "detected_food_terms": [
+            "berries",
+            "bread",
+            "butter",
+            "flour",
+            "garlic"
+          ],
+          "flagged_extra_ingredients": [
+            "berries",
+            "bread"
+          ],
+          "extra_count": 2,
+          "ingredient_coverage": 0.8,
+          "near_duplicate_pairs": 0,
+          "validator_pass": false,
+          "requires_manual_review": true
+        },
+        "status": "flagged_requires_review"
+      }
+    }
+  },
+  {
+    "case": "3888",
+    "split": "heldout",
+    "ingredients": [
+      "old fashioned oats",
+      "peanuts",
+      "sunflower seeds",
+      "raisins",
+      "butter",
+      "pure maple syrup"
+    ],
+    "retrieved_sources": [
+      {
+        "id": "5646",
+        "title": "cinnamon-apple oatmeal"
+      },
+      {
+        "id": "6965",
+        "title": "maple syrup candy"
+      },
+      {
+        "id": "5344",
+        "title": "old fashioned oatmeal cookies"
+      }
+    ],
+    "variants": {
+      "GPT-2 original": {
+        "recipe": "Title: sweet maple syrup cookies\nSteps:\n1. place dry ingredients in a small bowl and mix well.\n2. pour into cookie sheet.\n3. bake at 350 for 30 minutes.",
+        "audit": {
+          "requested_ingredients": [
+            "old fashioned oats",
+            "peanuts",
+            "sunflower seeds",
+            "raisins",
+            "butter",
+            "pure maple syrup"
+          ],
+          "detected_food_terms": [
+            "maple syrup"
+          ],
+          "flagged_extra_ingredients": [
+            "maple syrup"
+          ],
+          "extra_count": 1,
+          "ingredient_coverage": 0.0,
+          "near_duplicate_pairs": 0,
+          "validator_pass": false,
+          "requires_manual_review": true
+        },
+        "status": "original_unvalidated"
+      },
+      "GPT-2 + Qwen validated": {
+        "recipe": "Title: sweet maple syrups (maple syrup)\nSteps:\n1. combine dry ingredients together in large bowl until well mixed.\n2. pour into 9x13 inch baking pan.\n3. bake at 400 degrees f for 5 minutes.\n4. cool completely before serving.",
+        "audit": {
+          "requested_ingredients": [
+            "old fashioned oats",
+            "peanuts",
+            "sunflower seeds",
+            "raisins",
+            "butter",
+            "pure maple syrup"
+          ],
+          "detected_food_terms": [
+            "maple syrup"
+          ],
+          "flagged_extra_ingredients": [
+            "maple syrup"
+          ],
+          "extra_count": 1,
+          "ingredient_coverage": 0.0,
+          "near_duplicate_pairs": 0,
+          "validator_pass": false,
+          "requires_manual_review": true
+        },
+        "status": "flagged_requires_review"
+      },
+      "GPT-2 + Qwen + RAG validated": {
+        "recipe": "Title: maple syrup cookies\nSteps:\n1. in a medium bowl, combine dry ingredients and mix well. \n2. scoop the dough into a cookie sheet.\n4. bake at high heat for 8 minutes.\n5. while baking, stir in maple and nuts as needed.\n6. sprinkle one tablespoon of nuts over each cookie.",
+        "audit": {
+          "requested_ingredients": [
+            "old fashioned oats",
+            "peanuts",
+            "sunflower seeds",
+            "raisins",
+            "butter",
+            "pure maple syrup"
+          ],
+          "detected_food_terms": [
+            "maple syrup"
+          ],
+          "flagged_extra_ingredients": [
+            "maple syrup"
+          ],
+          "extra_count": 1,
+          "ingredient_coverage": 0.0,
+          "near_duplicate_pairs": 0,
+          "validator_pass": false,
+          "requires_manual_review": true
+        },
+        "status": "flagged_requires_review"
+      }
+    }
+  }
+]

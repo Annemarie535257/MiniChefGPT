@@ -1,0 +1,42 @@
+[
+  {
+    "step": 9,
+    "epoch": 0,
+    "recipes_seen": 72,
+    "train_loss": 2.38917256345096,
+    "validation_loss": 2.038269925011151,
+    "validation_perplexity": 7.677315371230244,
+    "learning_rate": 0.00018384735519038294,
+    "elapsed_seconds": 865.2969999999914
+  },
+  {
+    "step": 22,
+    "epoch": 0,
+    "recipes_seen": 176,
+    "train_loss": 2.009857591131135,
+    "validation_loss": 1.9398721713662466,
+    "validation_perplexity": 6.957861499859193,
+    "learning_rate": 0.00013003508796771324,
+    "elapsed_seconds": 1828.7809999999881
+  },
+  {
+    "step": 26,
+    "epoch": 0,
+    "recipes_seen": 208,
+    "train_loss": 1.9967294267542415,
+    "validation_loss": 1.9272468505641587,
+    "validation_perplexity": 6.870568477065221,
+    "learning_rate": 5.5331307883628656e-05,
+    "elapsed_seconds": 3211.6719999999914
+  },
+  {
+    "step": 28,
+    "epoch": 0,
+    "recipes_seen": 224,
+    "train_loss": 2.1340703955261864,
+    "validation_loss": 1.925627001473991,
+    "validation_perplexity": 6.859448201983998,
+    "learning_rate": 2.0586759397644532e-05,
+    "elapsed_seconds": 4099.125
+  }
+]

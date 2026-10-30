@@ -1,0 +1,7 @@
+split,variant,cases,mean_ingredient_coverage,mean_flagged_extra_count,share_with_flagged_extras,mean_duplicate_pairs,mean_repairs,mean_refinement_seconds
+custom,GPT-2 + Qwen + RAG validated,4,0.5,1.25,0.5,0.0,1.5,1695.0425
+custom,GPT-2 + Qwen validated,4,0.6875,0.0,0.0,0.0,1.5,53.4925
+custom,GPT-2 original,4,1.0,0.75,0.75,0.0,0.0,
+heldout,GPT-2 + Qwen + RAG validated,8,0.336125,1.75,0.75,0.0,2.0,173.515
+heldout,GPT-2 + Qwen validated,8,0.24512499999999998,1.375,0.875,0.0,2.0,154.53125
+heldout,GPT-2 original,8,0.5181250000000001,1.875,0.875,0.0,0.0,

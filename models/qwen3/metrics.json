@@ -1,0 +1,56 @@
+{
+  "model": "Qwen/Qwen3-0.6B",
+  "adapter": "models/qwen3/adapter",
+  "run": {
+    "steps": 28,
+    "recipes_seen": 224,
+    "stop_reason": "time_budget",
+    "elapsed_seconds": 4099.702999999994,
+    "best_validation_subset_loss": 1.925627001473991,
+    "mode": "LoRA (32-bit base on CPU)"
+  },
+  "pretrained_validation_subset": {
+    "loss": 2.7281034171847125,
+    "perplexity": 15.303834488850626,
+    "tokens": 5605
+  },
+  "validation_subset": {
+    "loss": 1.9256269796951662,
+    "perplexity": 6.8594480525932795,
+    "tokens": 5605
+  },
+  "test": {
+    "loss": 1.9827207956979909,
+    "perplexity": 7.2624758414789,
+    "tokens": 65357
+  },
+  "truncated_recipes": {
+    "train": 982,
+    "validation": 53,
+    "test": 57
+  },
+  "settings": {
+    "max_length": 320,
+    "batch_size": 2,
+    "grad_accum": 4,
+    "learning_rate": 0.0002,
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "training_minutes": 60,
+    "max_steps": 1000,
+    "seed": 42
+  },
+  "heldout_benchmark": {
+    "ingredient_mentions": 0.6262566137566138,
+    "end_marker_rate": 1.0,
+    "nonempty_steps_rate": 1.0,
+    "mean_steps": 7.833333333333333
+  },
+  "custom_benchmark": {
+    "ingredient_mentions": 1.0,
+    "end_marker_rate": 1.0,
+    "nonempty_steps_rate": 1.0,
+    "mean_steps": 5.5
+  },
+  "quality_note": "Ingredient mentions do not measure recipe correctness. Inspect the drafts."
+}

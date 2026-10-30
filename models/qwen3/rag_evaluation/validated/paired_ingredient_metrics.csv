@@ -1,0 +1,37 @@
+case,split,variant,ingredient_coverage,extra_ingredient_count_flagged,has_flagged_extras,flagged_extra_ingredients,near_duplicate_step_pairs,validator_pass_heuristic,repair_attempts,refinement_seconds,status
+Chicken dinner,custom,GPT-2 original,1.0,1,1,rice,0,0,0,,original_unvalidated
+Chicken dinner,custom,GPT-2 + Qwen validated,1.0,0,0,,0,1,0,26.6,heuristic_pass_manual_review_needed
+Chicken dinner,custom,GPT-2 + Qwen + RAG validated,0.5,2,1,"carrot, celery",0,0,2,52.17,flagged_requires_review
+Vegetable pasta,custom,GPT-2 original,1.0,0,0,,0,1,0,,original_unvalidated
+Vegetable pasta,custom,GPT-2 + Qwen validated,0.75,0,0,,0,0,2,54.21,flagged_requires_review
+Vegetable pasta,custom,GPT-2 + Qwen + RAG validated,0.0,0,0,,0,0,2,59.8,flagged_requires_review
+Cheese omelet,custom,GPT-2 original,1.0,1,1,tomato,0,0,0,,original_unvalidated
+Cheese omelet,custom,GPT-2 + Qwen validated,0.5,0,0,,0,0,2,37.66,flagged_requires_review
+Cheese omelet,custom,GPT-2 + Qwen + RAG validated,1.0,0,0,,0,1,0,18.36,heuristic_pass_manual_review_needed
+Roasted vegetables,custom,GPT-2 original,1.0,1,1,onion,0,0,0,,original_unvalidated
+Roasted vegetables,custom,GPT-2 + Qwen validated,0.5,0,0,,0,0,2,95.5,flagged_requires_review
+Roasted vegetables,custom,GPT-2 + Qwen + RAG validated,0.5,3,1,"herbs, pepper, salt",0,0,2,6649.84,flagged_requires_review
+2303,heldout,GPT-2 original,1.0,0,0,,0,1,0,,original_unvalidated
+2303,heldout,GPT-2 + Qwen validated,0.2,0,0,,0,0,2,150.64,flagged_requires_review
+2303,heldout,GPT-2 + Qwen + RAG validated,0.0,0,0,,0,0,2,177.04,flagged_requires_review
+5418,heldout,GPT-2 original,1.0,4,1,"bread, pepper, salt, sugar",0,0,0,,original_unvalidated
+5418,heldout,GPT-2 + Qwen validated,1.0,2,1,"pepper, salt",0,0,2,152.64,flagged_requires_review
+5418,heldout,GPT-2 + Qwen + RAG validated,1.0,1,1,salt,0,0,2,251.79,flagged_requires_review
+7454,heldout,GPT-2 original,0.25,1,1,onion,0,0,0,,original_unvalidated
+7454,heldout,GPT-2 + Qwen validated,0.25,3,1,"garlic, onion, sausages",0,0,2,165.77,flagged_requires_review
+7454,heldout,GPT-2 + Qwen + RAG validated,0.25,4,1,"garlic, onion, pepper, salt",0,0,2,186.73,flagged_requires_review
+9362,heldout,GPT-2 original,0.667,1,1,bread,0,0,0,,original_unvalidated
+9362,heldout,GPT-2 + Qwen validated,0.0,1,1,bread,0,0,2,144.74,flagged_requires_review
+9362,heldout,GPT-2 + Qwen + RAG validated,0.0,0,0,,0,0,2,188.6,flagged_requires_review
+4408,heldout,GPT-2 original,0.25,2,1,"potato, sour cream",0,0,0,,original_unvalidated
+4408,heldout,GPT-2 + Qwen validated,0.0,1,1,potato,0,0,2,129.52,flagged_requires_review
+4408,heldout,GPT-2 + Qwen + RAG validated,0.083,3,1,"basil, potato, sour cream",0,0,2,155.34,flagged_requires_review
+4557,heldout,GPT-2 original,0.778,4,1,"bacon, flour, sour cream, sugar",0,0,0,,original_unvalidated
+4557,heldout,GPT-2 + Qwen validated,0.111,1,1,carrot,0,0,2,175.92,flagged_requires_review
+4557,heldout,GPT-2 + Qwen + RAG validated,0.556,3,1,"flour, mashed potatoes, sugar",0,0,2,84.52,flagged_requires_review
+3908,heldout,GPT-2 original,0.2,2,1,"blackberry, bread",0,0,0,,original_unvalidated
+3908,heldout,GPT-2 + Qwen validated,0.4,2,1,"blackberry, milk",0,0,2,198.91,flagged_requires_review
+3908,heldout,GPT-2 + Qwen + RAG validated,0.8,2,1,"berries, bread",0,0,2,210.87,flagged_requires_review
+3888,heldout,GPT-2 original,0.0,1,1,maple syrup,0,0,0,,original_unvalidated
+3888,heldout,GPT-2 + Qwen validated,0.0,1,1,maple syrup,0,0,2,118.11,flagged_requires_review
+3888,heldout,GPT-2 + Qwen + RAG validated,0.0,1,1,maple syrup,0,0,2,133.23,flagged_requires_review
