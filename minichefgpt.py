@@ -55,6 +55,17 @@ class Config:
     cpu_threads: int = 4
 
 
+def configure_gpt2_profile(config):
+    """Configure a compact GPT-2-inspired model that can be trained from scratch."""
+    config.context_length = 512
+    config.d_model = 256
+    config.num_heads = 8
+    config.num_layers = 6
+    config.d_ff = 1024
+    config.batch_size = 8
+    return config
+
+
 def seed_everything(seed):
     random.seed(seed)
     np.random.seed(seed)
@@ -661,15 +672,24 @@ def main():
     parser.add_argument('--steps', type=int, default=12000)
     parser.add_argument('--threads', type=int, default=4)
     parser.add_argument('--resume', action='store_true')
-    parser.add_argument('--gpu-profile', action='store_true')
+    profiles = parser.add_mutually_exclusive_group()
+    profiles.add_argument('--gpu-profile', action='store_true')
+    profiles.add_argument('--gpt2-profile', action='store_true')
     parser.add_argument('--output-dir', type=Path)
     args = parser.parse_args()
     config = Config(training_minutes=args.minutes, max_steps=args.steps, cpu_threads=args.threads)
     if args.gpu_profile:
         config.context_length, config.d_model, config.d_ff = 384, 256, 1024
         config.num_layers, config.batch_size = 4, 32
+    elif args.gpt2_profile:
+        configure_gpt2_profile(config)
     device, splits, tokenizer, datasets, manifest, model = prepare(config)
-    output_dir = args.output_dir or PROJECT_ROOT / ('models/gpu' if args.gpu_profile else 'models/refactored')
+    default_output_dir = (
+        'models/gpu' if args.gpu_profile else
+        'models/gpt2' if args.gpt2_profile else
+        'models/refactored'
+    )
+    output_dir = args.output_dir or PROJECT_ROOT / default_output_dir
     history, run = train_model(model, datasets, tokenizer, config, device, output_dir, manifest, args.resume)
     finish_run(model, tokenizer, config, device, datasets, manifest, history, run, output_dir, test_rows=splits['test'])
 

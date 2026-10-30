@@ -1,5 +1,6 @@
 """Small Streamlit interface for the saved MiniChefGPT recipe model."""
 from pathlib import Path
+import json
 import logging
 import os
 import re
@@ -18,9 +19,14 @@ CHECKPOINT = ROOT / 'models' / 'refactored' / 'minichefgpt_best.pt'
 GPT2_MODEL = os.environ.get('MINICHEF_GPT2_MODEL', '')
 GPT2_DIR = ROOT / 'models' / 'gpt2' / 'best'
 MINICHEF, GPT2 = 'MiniChefGPT', 'GPT-2 fine-tuned'
+QWEN_ADAPTER = ROOT / 'models' / 'qwen-recipe-lora'
+QWEN = 'Qwen2.5-1.5B-Instruct (local)'
+QWEN_FINETUNED = 'Qwen recipe fine-tune (local)'
 MODEL_DESCRIPTIONS = {
     MINICHEF: 'Small Transformer trained from scratch on 9,000 recipes (1M parameters).',
     GPT2: 'Pretrained GPT-2 fine-tuned on the same recipes (124M parameters). Slower, more fluent.',
+    QWEN: 'Pretrained Qwen2.5-1.5B-Instruct model. Requires several GB of storage and substantial RAM.',
+    QWEN_FINETUNED: 'Qwen2.5 fine-tuned on the recipe data with a LoRA adapter.',
 }
 LOGGER = logging.getLogger(__name__)
 EXAMPLES = {
@@ -66,6 +72,14 @@ def gpt2_source():
     return None
 
 
+def qwen_adapter_metadata():
+    metadata_path = QWEN_ADAPTER / 'minichef_adapter.json'
+    config_path = QWEN_ADAPTER / 'adapter_config.json'
+    if not metadata_path.is_file() or not config_path.is_file():
+        return None
+    return json.loads(metadata_path.read_text(encoding='utf-8'))
+
+
 @st.cache_resource(show_spinner=False)
 def load_gpt2_resources(source, version):
     """Cache the fine-tuned GPT-2 model by source and file version."""
@@ -86,10 +100,34 @@ def generate(model_name, ingredients):
         from gpt2_recipes import generate_gpt2_recipe
         with lock:
             return generate_gpt2_recipe(model, tokenizer, ingredients, candidates=4, seed=seed)
+    if model_name in (QWEN, QWEN_FINETUNED):
+        from qwen_recipe import MODEL_ID, generate_qwen_recipe
+
+        if model_name == QWEN_FINETUNED:
+            metadata = qwen_adapter_metadata()
+            if metadata is None:
+                raise ValueError('The Qwen recipe adapter is missing. Run python qwen_finetune.py first.')
+            model_id = metadata['model_id']
+            adapter_path = str(QWEN_ADAPTER)
+            adapter_version = (QWEN_ADAPTER / 'adapter_config.json').stat().st_mtime_ns
+        else:
+            model_id, adapter_path, adapter_version = MODEL_ID, None, None
+        model, tokenizer, lock = load_qwen_resources(model_id, adapter_path, adapter_version)
+        with lock:
+            return generate_qwen_recipe(model, tokenizer, ingredients)
     model, tokenizer, lock = load_resources(str(CHECKPOINT), CHECKPOINT.stat().st_mtime_ns)
     from minichefgpt import generate_recipe
     with lock:
         return generate_recipe(model, tokenizer, ingredients, candidates=8, seed=seed)
+
+
+@st.cache_resource(show_spinner=False)
+def load_qwen_resources(model_id, adapter_path=None, adapter_version=None):
+    """Cache the local Qwen model and serialize inference across sessions."""
+    from qwen_recipe import load_qwen
+
+    model, tokenizer = load_qwen(model_id, adapter_path=adapter_path)
+    return model, tokenizer, threading.Lock()
 
 
 def use_example(name):
@@ -127,20 +165,26 @@ h2, h3 { letter-spacing: -0.02em; }
     st.caption('Experimental recipe drafts. Review ingredients, quantities, and cooking instructions before use.')
     st.write('')
 
-    if not CHECKPOINT.is_file():
-        st.error('The recipe model is missing. Include models/refactored/minichefgpt_best.pt in the deployed app files.')
-        st.stop()
-
     input_column, output_column = st.columns([1, 1.35], gap='large')
     with input_column:
         with st.container(border=True):
-            model_name = st.radio('Model', [MINICHEF, GPT2], key='model_choice', horizontal=True)
+            model_name = st.radio(
+                'Model', [MINICHEF, GPT2, QWEN, QWEN_FINETUNED],
+                key='model_choice', horizontal=True,
+            )
             st.caption(MODEL_DESCRIPTIONS[model_name])
             gpt2_missing = model_name == GPT2 and gpt2_source() is None
             if gpt2_missing:
                 st.info('The fine-tuned GPT-2 model is not available here. Run '
                         'MiniChefGPT_GPT2_finetune.ipynb to create models/gpt2/best, '
                         'or set MINICHEF_GPT2_MODEL to a Hugging Face model id.')
+            qwen_metadata = qwen_adapter_metadata() if model_name == QWEN_FINETUNED else None
+            qwen_adapter_missing = model_name == QWEN_FINETUNED and qwen_metadata is None
+            if qwen_adapter_missing:
+                st.info('The Qwen recipe adapter is not available here. Run python qwen_finetune.py first.')
+            minichef_missing = model_name == MINICHEF and not CHECKPOINT.is_file()
+            if minichef_missing:
+                st.info('The MiniChefGPT checkpoint is missing. Include models/refactored/minichefgpt_best.pt.')
             st.subheader('Your ingredients')
             st.caption('Try an example, or use what you have.')
             first, second = st.columns(2)
@@ -151,7 +195,7 @@ h2, h3 { letter-spacing: -0.02em; }
                                     max_chars=1000, placeholder='chicken, garlic, onion, tomato',
                                     help='Separate ingredients with commas or put each on a new line.')
                 submitted = st.form_submit_button('Generate recipe', type='primary', use_container_width=True,
-                                                  disabled=gpt2_missing)
+                                                  disabled=gpt2_missing or qwen_adapter_missing or minichef_missing)
             if submitted:
                 st.session_state.pop('recipe', None)
                 st.session_state.pop('recipe_model', None)
